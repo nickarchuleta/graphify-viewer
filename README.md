@@ -17,12 +17,13 @@ Fork of https://github.com/raufer/graphify repo built out with Claude Code, Grok
 
 Static HTML tools that combine a **Spellbook knowledge graph** and a **GitHub stars “nebula”** in one tab, with **clean README** rendering in the parent page.
 
+**Live repo:** [github.com/nickarchuleta/graphify-viewer](https://github.com/nickarchuleta/graphify-viewer)
 
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR_USER/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/nickarchuleta/graphify-viewer.git
+cd graphify-viewer
 python3 -m http.server 8765
 ```
 
@@ -54,22 +55,18 @@ python3 scripts/render_github_stars_mirror.py
 
 The script also runs from `~/spellbook_oracle/` if you keep stars JSON there (see script docstring).
 
-## Push to your GitHub
+## Publishing updates (you)
 
-`gh` CLI isn’t required. From this folder (after `git` is configured with your name/email):
-
-1. Create a **new empty repo** on GitHub (no README) — e.g. `graphify-viewer` or `spellbook-stars-ui`.
-2. Add the remote and push:
+After editing files in your clone:
 
 ```bash
-cd /path/to/graphify-out   # this repo root
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
+cd graphify-viewer   # or ~/graphify-out if that’s your working copy
+git add -A
+git commit -m "Describe your change"
+git push
 ```
 
-Use **SSH** instead if your keys work: `git remote add origin git@github.com:YOUR_USERNAME/YOUR_REPO.git`
-
-If `git push` asks for credentials, use a [Personal Access Token](https://github.com/settings/tokens) as the password for HTTPS, or run `ssh-add` for SSH.
+**First-time push from a new machine:** create an empty repo on GitHub, then `git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git` and `git push -u origin main`. Use a [Personal Access Token](https://github.com/settings/tokens) if HTTPS asks for a password.
 
 ## License
 
