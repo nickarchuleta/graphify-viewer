@@ -1,12 +1,14 @@
 # Spellbook + GitHub stars — unified viewer
 
-![Screenshot_2026-04-12_at_3 44 17_PM-570df729-7b81-](https://github.com/user-attachments/assets/37704e54-5cec-4a6c-8dc2-1af5e29e3d31)
+<img width="1710" height="1112" alt="Screenshot 2026-04-12 at 3 55 10 PM" src="https://github.com/user-attachments/assets/b764b940-9ad8-4eb2-b99d-35a7cf6480b3" />
 
 ![Screenshot_2026-04-12_at_3 43 36_PM-d68192af-9140-](https://github.com/user-attachments/assets/24f4a799-cb34-4f79-9e56-bcf447b98445)
 
+![Screenshot_2026-04-12_at_3 44 17_PM-570df729-7b81-](https://github.com/user-attachments/assets/37704e54-5cec-4a6c-8dc2-1af5e29e3d31)
+
 ![Screenshot_2026-04-12_at_3 43 06_PM-46c1846c-6384-](https://github.com/user-attachments/assets/3a744dda-db87-4b84-b4ba-835a6affd440)
 
-<img width="1710" height="1112" alt="Screenshot 2026-04-12 at 3 55 10 PM" src="https://github.com/user-attachments/assets/b764b940-9ad8-4eb2-b99d-35a7cf6480b3" />
+
 
 
 
