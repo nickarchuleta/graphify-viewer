@@ -1,6 +1,17 @@
 # Spellbook + GitHub stars — unified viewer
 
+![Screenshot_2026-04-12_at_3 44 17_PM-570df729-7b81-](https://github.com/user-attachments/assets/37704e54-5cec-4a6c-8dc2-1af5e29e3d31)
+
+![Screenshot_2026-04-12_at_3 43 36_PM-d68192af-9140-](https://github.com/user-attachments/assets/24f4a799-cb34-4f79-9e56-bcf447b98445)
+
+![Screenshot_2026-04-12_at_3 43 06_PM-46c1846c-6384-](https://github.com/user-attachments/assets/3a744dda-db87-4b84-b4ba-835a6affd440)
+
+![Screenshot_2026-04-12_at_3 42 49_PM-1255ff39-bf5b-](https://github.com/user-attachments/assets/eb23fd48-9c88-418a-a36c-a311a0e9199e)
+
+
+
 Static HTML tools that combine a **Spellbook knowledge graph** and a **GitHub stars “nebula”** in one tab, with **clean README** rendering in the parent page.
+
 
 ## Quick start
 
