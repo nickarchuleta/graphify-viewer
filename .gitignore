@@ -15,5 +15,5 @@ GRAPH_REPORT.md
 # Optional: do not commit your full stars export by default
 data/master_stars_all.json
 
-# Large optional — uncomment to shrink clone if you regenerate locally
-# graph.json
+# Large local export — not required for the viewer (graph.html embeds its own data)
+graph.json

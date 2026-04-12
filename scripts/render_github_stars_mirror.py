@@ -118,8 +118,7 @@ def main() -> None:
 </head>
 <body>
 <header>
-  <strong>Stars</strong> · <a href="https://github.com/nickarchuleta?tab=stars" target="_blank" rel="noopener">nickarchuleta</a>
-  · {len(repos)} repos + hub · Use <a href="./graph_unified.html" style="color:#93c5fd">graph_unified.html</a> for spellbook + stars in one window.
+  <strong>GitHub stars</strong> · {len(repos)} repos + hub · Open <a href="./graph_unified.html" style="color:#93c5fd">graph_unified.html</a> (Spellbook + stars, same folder).
 </header>
 <div class="wrap">
   <div id="graph"></div>

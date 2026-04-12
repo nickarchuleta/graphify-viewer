@@ -40,6 +40,10 @@ Flex gotcha: children default to `min-height: auto` and grow past the viewport. 
 
 `#star-readme` uses overrides so common README wrappers (`max-width`, `article`, etc.) don’t leave a narrow column with empty margin.
 
+### Local file paths in Spellbook (`graph.html`)
+
+`SPELLBOOK_FILES_ROOT` defaults to **empty** in the published repo (no home directory in source). Set `window.__SPELLBOOK_FILES_ROOT = "/Users/you/"` locally if you want “Open file” links. See **[docs/PRIVACY.md](./docs/PRIVACY.md)**.
+
 ### CORS
 
 Serve over **http**, not `file://`, for README fetch.
