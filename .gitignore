@@ -1,0 +1,19 @@
+.DS_Store
+.graphify_python
+.graphify_uncached.txt
+
+# Nested accidental cache
+graphify-out/
+
+# Local graphify artifacts (keep repo = viewer + assets we chose to track)
+cache/
+cost.json
+manifest.json
+ql_server.py
+GRAPH_REPORT.md
+
+# Optional: do not commit your full stars export by default
+data/master_stars_all.json
+
+# Large optional — uncomment to shrink clone if you regenerate locally
+# graph.json

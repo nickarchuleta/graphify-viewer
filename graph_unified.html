@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Spellbook + Stars — unified</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./readme_render.js"></script>
+  <style>
+    :root {
+      --bg: #0f0f1a; --bg2: #1a1a2e; --border: #2a2a4e; --text: #e0e0e0; --muted: #888; --accent: #2563eb;
+      --detail-open: min(520px, 46vw);
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; }
+    .layout { display: flex; height: 100vh; min-height: 0; max-height: 100vh; overflow: hidden; }
+    /* Left hideaway: view switcher */
+    .view-dock {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      min-height: 0;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+    }
+    .view-dock-inner {
+      overflow: hidden;
+      transition: width 0.2s ease, min-width 0.2s ease, opacity 0.15s ease;
+      min-width: 0;
+    }
+    .view-dock.expanded .view-dock-inner {
+      width: min(152px, 22vw);
+      min-width: min(152px, 22vw);
+      opacity: 1;
+    }
+    .view-dock.collapsed .view-dock-inner {
+      width: 0;
+      min-width: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 8px;
+      height: 100%;
+      border-right: none;
+    }
+    .tabs button {
+      width: 100%;
+      padding: 10px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #2a2a4e;
+      color: var(--text);
+      font-size: 12px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 1.25;
+    }
+    .tabs button[aria-selected="true"] {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+    .dock-toggle {
+      width: 28px;
+      flex-shrink: 0;
+      align-self: stretch;
+      border: none;
+      background: var(--bg2);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      border-right: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .dock-toggle:hover { background: #252540; color: var(--text); }
+    /* Right hideaway: spellbook + README (mirror of left dock) */
+    .detail-dock {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      min-height: 0;
+      max-height: 100%;
+      align-self: stretch;
+      background: var(--bg2);
+      border-left: 1px solid var(--border);
+    }
+    .detail-dock-inner {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      min-width: 0;
+      overflow: hidden;
+      transition: width 0.2s ease, min-width 0.2s ease, opacity 0.15s ease;
+      background: var(--bg2);
+    }
+    .detail-dock.expanded .detail-dock-inner {
+      width: var(--detail-open);
+      min-width: var(--detail-open);
+      opacity: 1;
+    }
+    .detail-dock.collapsed .detail-dock-inner {
+      width: 0;
+      min-width: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .detail-dock .dock-toggle {
+      border-right: 1px solid var(--border);
+      border-left: none;
+    }
+    .graph-slot { flex: 1; min-width: 0; position: relative; background: var(--bg); }
+    .graph-slot iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
+    .graph-slot iframe.on { display: block; }
+    .panel {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.45;
+      width: 100%;
+      max-width: none;
+    }
+    .panel h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 8px; }
+    .panel a { color: #60a5fa; word-break: break-word; }
+    #spell-hint { color: var(--muted); font-size: 11px; }
+    #star-detail { display: none; }
+    #star-detail.on { display: block; }
+    #star-head { margin-bottom: 10px; }
+    #star-readme {
+      font-size: 12px; color: #ccc; width: 100%; min-width: 0; max-width: none;
+      overflow-wrap: anywhere;
+    }
+    #star-readme.readme-prose { max-width: none; width: 100%; }
+    /* README HTML often ships max-width / centered columns — fill the panel */
+    #star-readme.readme-prose > * { max-width: 100% !important; }
+    #star-readme.readme-prose div[style*="max-width"],
+    #star-readme.readme-prose article,
+    #star-readme.readme-prose section {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box;
+    }
+    #star-readme pre, #star-readme code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
+    #star-readme pre { overflow-x: auto; max-width: 100%; }
+    #star-readme h1 { font-size: 15px; margin: 0.5em 0 0.25em; color: #f0f0f0; }
+    #star-readme h2, #star-readme h3 { font-size: 13px; margin: 0.6em 0 0.25em; color: #e8e8e8; }
+    #star-readme p { margin: 0.45em 0; max-width: none; }
+    #star-readme img { max-width: 100% !important; height: auto !important; }
+    #star-readme table { display: block; overflow-x: auto; max-width: 100%; }
+    #star-readme ul, #star-readme ol { padding-left: 1.2em; margin: 0.35em 0; }
+    .loading { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div id="view-dock" class="view-dock expanded" aria-label="Graph view switcher">
+      <div class="view-dock-inner">
+        <div class="tabs" role="tablist" aria-label="Graph view">
+          <button type="button" id="tab-spell" role="tab" aria-selected="true" aria-controls="panel">Spellbook map</button>
+          <button type="button" id="tab-stars" role="tab" aria-selected="false" aria-controls="panel">Stars nebula</button>
+        </div>
+      </div>
+      <button type="button" id="dock-toggle" class="dock-toggle" aria-expanded="true" title="Hide view switcher">‹</button>
+    </div>
+    <div class="graph-slot">
+      <iframe id="if-spell" class="on" title="Spellbook graph" src="./graph.html"></iframe>
+      <iframe id="if-stars" title="Stars nebula" src="./github_stars_mirror.html?embed=1"></iframe>
+    </div>
+    <div id="detail-dock" class="detail-dock expanded" aria-label="Details panel">
+      <button type="button" id="detail-toggle" class="dock-toggle" aria-expanded="true" title="Hide details panel">›</button>
+      <div class="detail-dock-inner">
+        <div class="panel" id="panel">
+          <div id="spell-pane">
+            <h2>Spellbook</h2>
+            <p id="spell-hint">Search, node info, and community toggles live in the graph. Use the <strong>left</strong> strip for the stars nebula. Use <strong>›</strong> here to hide this column and give the graph more room.</p>
+          </div>
+          <div id="star-detail">
+            <h2>Selected repo</h2>
+            <div id="star-head" class="loading">Click a colored node in the nebula…</div>
+            <div id="star-readme"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+(function () {
+  const DOCK_KEY = 'graphUnifiedDockExpanded';
+  const DETAIL_KEY = 'graphUnifiedDetailExpanded';
+  const ifSpell = document.getElementById('if-spell');
+  const ifStars = document.getElementById('if-stars');
+  const tabSpell = document.getElementById('tab-spell');
+  const tabStars = document.getElementById('tab-stars');
+  const spellPane = document.getElementById('spell-pane');
+  const starDetail = document.getElementById('star-detail');
+  const starHead = document.getElementById('star-head');
+  const starReadme = document.getElementById('star-readme');
+  const viewDock = document.getElementById('view-dock');
+  const dockToggle = document.getElementById('dock-toggle');
+  const detailDock = document.getElementById('detail-dock');
+  const detailToggle = document.getElementById('detail-toggle');
+
+  function setDockExpanded(expanded) {
+    viewDock.classList.toggle('expanded', expanded);
+    viewDock.classList.toggle('collapsed', !expanded);
+    dockToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    dockToggle.textContent = expanded ? '‹' : '›';
+    dockToggle.title = expanded ? 'Hide view switcher' : 'Show view switcher';
+    try { localStorage.setItem(DOCK_KEY, expanded ? '1' : '0'); } catch (e) {}
+  }
+
+  function setDetailExpanded(expanded) {
+    detailDock.classList.toggle('expanded', expanded);
+    detailDock.classList.toggle('collapsed', !expanded);
+    detailToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    detailToggle.textContent = expanded ? '›' : '‹';
+    detailToggle.title = expanded ? 'Hide details panel' : 'Show details panel';
+    try { localStorage.setItem(DETAIL_KEY, expanded ? '1' : '0'); } catch (e) {}
+  }
+
+  try {
+    if (localStorage.getItem(DOCK_KEY) === '0') setDockExpanded(false);
+  } catch (e) {}
+  try {
+    if (localStorage.getItem(DETAIL_KEY) === '0') setDetailExpanded(false);
+  } catch (e) {}
+
+  dockToggle.addEventListener('click', function () {
+    setDockExpanded(!viewDock.classList.contains('expanded'));
+  });
+  detailToggle.addEventListener('click', function () {
+    setDetailExpanded(!detailDock.classList.contains('expanded'));
+  });
+
+  function setView(which) {
+    const stars = which === 'stars';
+    tabSpell.setAttribute('aria-selected', !stars);
+    tabStars.setAttribute('aria-selected', stars);
+    ifSpell.classList.toggle('on', !stars);
+    ifStars.classList.toggle('on', stars);
+    spellPane.style.display = stars ? 'none' : 'block';
+    starDetail.classList.toggle('on', stars);
+  }
+  tabSpell.addEventListener('click', () => setView('spell'));
+  tabStars.addEventListener('click', () => setView('stars'));
+
+  window.addEventListener('keydown', function (ev) {
+    if (ev.target && (ev.target.tagName === 'INPUT' || ev.target.tagName === 'TEXTAREA' || ev.target.isContentEditable)) return;
+    if (ev.key === '1') { ev.preventDefault(); setView('spell'); }
+    if (ev.key === '2') { ev.preventDefault(); setView('stars'); }
+    if (ev.key === '[') { ev.preventDefault(); setDetailExpanded(false); }
+    if (ev.key === ']') { ev.preventDefault(); setDetailExpanded(true); }
+  });
+
+  async function fetchReadme(owner, repo) {
+    try {
+      const r = await fetch(
+        'https://api.github.com/repos/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/readme',
+        { headers: { Accept: 'application/vnd.github.raw' } }
+      );
+      if (r.ok) return await r.text();
+    } catch (e) {}
+    try {
+      const r = await fetch(
+        'https://raw.githubusercontent.com/' + owner + '/' + repo + '/HEAD/README.md'
+      );
+      if (r.ok) return await r.text();
+    } catch (e) {}
+    return null;
+  }
+
+  window.addEventListener('message', async function (ev) {
+    const d = ev.data;
+    if (!d || d.type !== 'stars-node') return;
+    setView('stars');
+    const fn = d.fullName || '';
+    const url = d.url || '';
+    const label = d.label || fn;
+    if (!fn || fn.indexOf('/') === -1) {
+      starHead.innerHTML = '<code>' + (d.id || '') + '</code> — hub (no README)';
+      starReadme.innerHTML = '';
+      return;
+    }
+    starHead.innerHTML =
+      '<div><b>' + escapeHtml(label) + '</b></div>' +
+      (url ? '<p><a href="' + url + '" target="_blank" rel="noopener">Open on GitHub</a></p>' : '');
+    starReadme.innerHTML = '<p class="loading">Loading README…</p>';
+    const parts = fn.split('/');
+    const owner = parts[0];
+    const repo = parts.slice(1).join('/');
+    const md = await fetchReadme(owner, repo);
+    if (md && typeof ReadmeSkin !== 'undefined' && typeof marked !== 'undefined') {
+      ReadmeSkin.render(md, starReadme, marked);
+    } else if (md) {
+      starReadme.innerHTML = '<pre style="white-space:pre-wrap;word-break:break-word">' + escapeHtml(md) + '</pre>';
+    } else {
+      starReadme.innerHTML =
+        '<p style="color:#888">Could not load README (private, rate limit, or CORS). ' +
+        '<a href="' + (url || 'https://github.com/' + fn) + '" target="_blank" rel="noopener">View on GitHub</a></p>';
+    }
+  });
+
+  function escapeHtml(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+})();
+  </script>
+</body>
+</html>
