@@ -38,6 +38,23 @@ python3 scripts/render_github_stars_mirror.py
 
 The script also runs from `~/spellbook_oracle/` if you keep stars JSON there (see script docstring).
 
+## Push to your GitHub
+
+`gh` CLI isn’t required. From this folder (after `git` is configured with your name/email):
+
+1. Create a **new empty repo** on GitHub (no README) — e.g. `graphify-viewer` or `spellbook-stars-ui`.
+2. Add the remote and push:
+
+```bash
+cd /path/to/graphify-out   # this repo root
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
+
+Use **SSH** instead if your keys work: `git remote add origin git@github.com:YOUR_USERNAME/YOUR_REPO.git`
+
+If `git push` asks for credentials, use a [Personal Access Token](https://github.com/settings/tokens) as the password for HTTPS, or run `ssh-add` for SSH.
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
