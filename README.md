@@ -1,5 +1,7 @@
 # Spellbook + GitHub stars — unified viewer
 
+Fork of https://github.com/raufer/graphify repo built out with Claude Code, Grok and Cursor to accomodate my specific (growing) tech stack.
+
 <img width="1710" height="1112" alt="Screenshot 2026-04-12 at 3 55 10 PM" src="https://github.com/user-attachments/assets/b764b940-9ad8-4eb2-b99d-35a7cf6480b3" />
 
 ![Screenshot_2026-04-12_at_3 43 36_PM-d68192af-9140-](https://github.com/user-attachments/assets/24f4a799-cb34-4f79-9e56-bcf447b98445)
