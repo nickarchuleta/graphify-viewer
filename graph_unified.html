@@ -176,6 +176,7 @@
       transform: translateY(-50%);
       z-index: 40;
       border-right: none;
+      border-left: 1px solid var(--border);
       border-radius: 6px 0 0 6px;
       margin-right: 0;
     }
@@ -711,9 +712,23 @@
       starReadme.innerHTML = '';
       return;
     }
+    var enrich = d.enrich && typeof d.enrich === 'object' ? d.enrich : null;
+    var enrichBits = '';
+    if (enrich) {
+      var src = String(enrich.source || '').trim();
+      var ic = Number(enrich.insightCount || 0);
+      var kws = Array.isArray(enrich.keywords) ? enrich.keywords.filter(Boolean).slice(0, 8) : [];
+      var srcLabel = src ? ('deep: ' + escapeHtml(src)) : 'deep: fallback';
+      enrichBits =
+        '<div style="margin-top:6px;font-size:11px;color:#9aa0be">' +
+        srcLabel + ' · insights: ' + (isFinite(ic) ? ic : 0) +
+        (kws.length ? '<br/><span style="color:#7f89ad">kws:</span> ' + escapeHtml(kws.join(', ')) : '') +
+        '</div>';
+    }
     starHead.innerHTML =
       '<div><b>' + escapeHtml(label) + '</b></div>' +
-      (url ? '<p><a href="' + url + '" target="_blank" rel="noopener">Open on GitHub</a></p>' : '');
+      (url ? '<p><a href="' + url + '" target="_blank" rel="noopener">Open on GitHub</a></p>' : '') +
+      enrichBits;
     const reqId = ++__readmeReqSeq;
     starReadme.innerHTML = '<p class="loading">Loading README…</p>';
     const nameParts = fn.split('/');

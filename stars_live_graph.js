@@ -42,6 +42,8 @@
   };
   var STARS_GROUP_OVERRIDES = Object.assign({}, DEFAULT_STARS_GROUP_OVERRIDES);
   var __starsOverrideLoaded = false;
+  var STARS_ENRICHMENT = {};
+  var __starsEnrichmentLoaded = false;
   function groupById(id) {
     for (var i = 0; i < STARS_GROUPS.length; i++) {
       if (STARS_GROUPS[i].id === id) return STARS_GROUPS[i];
@@ -63,6 +65,23 @@
         if (!key || !gid) return;
         STARS_GROUP_OVERRIDES[key] = gid;
       });
+    } catch (e) {}
+  }
+
+  async function loadEnrichmentFile() {
+    if (__starsEnrichmentLoaded) return;
+    __starsEnrichmentLoaded = true;
+    try {
+      var r = await fetch('./manifests/deep_grok_enrichment_all_repos.json', { cache: 'no-store' });
+      if (!r.ok) return;
+      var j = await r.json();
+      var repos = j && Array.isArray(j.repos) ? j.repos : [];
+      for (var i = 0; i < repos.length; i++) {
+        var row = repos[i] || {};
+        var key = String(row.repo || '').toLowerCase().trim();
+        if (!key) continue;
+        STARS_ENRICHMENT[key] = row;
+      }
     } catch (e) {}
   }
 
@@ -143,6 +162,7 @@
 
   async function buildNodesEdges(apiRepos) {
     await loadOverrideFile();
+    await loadEnrichmentFile();
     var hubId = '_github_stars_hub';
     var hubTitle =
       'Hub — ' +
@@ -172,7 +192,15 @@
       var stars = r.stargazers_count || 0;
       var lang = r.language || '—';
       var grp = inferStarGroup(r);
+      var enrich = STARS_ENRICHMENT[fn.toLowerCase()] || null;
       var title = fn + '\n' + stars + '★ · ' + lang + '\n' + desc + '\n— ' + grp.label;
+      if (enrich) {
+        var src = enrich.enrichment_source || 'fallback_only';
+        var ic = Number(enrich.insight_count || 0);
+        var kws = Array.isArray(enrich.keywords) ? enrich.keywords.slice(0, 6).join(', ') : '';
+        title += '\n[deep] ' + src + ' · insights:' + ic;
+        if (kws) title += '\n[kws] ' + kws;
+      }
       var col = grp.color;
       var size = 10 + Math.min(18, stars ? Math.pow(stars, 0.33) : 8);
       nodes.push({
@@ -185,6 +213,9 @@
         title: escTitle(title),
         url: url,
         _star_group: grp.id,
+        _enrich_source: enrich ? (enrich.enrichment_source || '') : '',
+        _enrich_insight_count: enrich ? Number(enrich.insight_count || 0) : 0,
+        _enrich_keywords: enrich && Array.isArray(enrich.keywords) ? enrich.keywords.slice(0, 10) : [],
       });
       edges.push({ from: hubId, to: gid });
     }
@@ -197,5 +228,6 @@
     fetchAllStarred: fetchAllStarred,
     buildNodesEdges: buildNodesEdges,
     loadOverrideFile: loadOverrideFile,
+    loadEnrichmentFile: loadEnrichmentFile,
   };
 })(typeof window !== 'undefined' ? window : this);

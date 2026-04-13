@@ -239,7 +239,18 @@ function starsTryLinkClick(nodeId) {
     const nn = nodesDS.get(nodeId);
     const u = nn._url;
     const fn = nn._full_name || '';
-    window.parent.postMessage({ type: 'stars-node', fullName: fn, url: u || '', label: nn.label || nodeId, id: nodeId }, '*');
+    window.parent.postMessage({
+      type: 'stars-node',
+      fullName: fn,
+      url: u || '',
+      label: nn.label || nodeId,
+      id: nodeId,
+      enrich: {
+        source: nn._enrich_source || '',
+        insightCount: Number(nn._enrich_insight_count || 0),
+        keywords: Array.isArray(nn._enrich_keywords) ? nn._enrich_keywords : [],
+      },
+    }, '*');
   }
   return true;
 }
@@ -417,7 +428,18 @@ network.on('click', async (p) => {
   const u = n._url;
   const fn = n._full_name || '';
   if (EMBED && window.parent !== window) {
-    window.parent.postMessage({ type: 'stars-node', fullName: fn, url: u || '', label: n.label || id, id }, '*');
+    window.parent.postMessage({
+      type: 'stars-node',
+      fullName: fn,
+      url: u || '',
+      label: n.label || id,
+      id,
+      enrich: {
+        source: n._enrich_source || '',
+        insightCount: Number(n._enrich_insight_count || 0),
+        keywords: Array.isArray(n._enrich_keywords) ? n._enrich_keywords : [],
+      },
+    }, '*');
     return;
   }
   const rd = document.getElementById('readme-local');
@@ -450,6 +472,9 @@ function starsMapVisNodes(raw) {
     id: n.id, label: n.label, color: n.color, size: n.size, font: n.font, title: n.title,
     _url: n.url || '', _full_name: n.full_name || '',
     _star_group: n._star_group || (n.id === '_github_stars_hub' ? 'hub' : 'misc'),
+    _enrich_source: n._enrich_source || '',
+    _enrich_insight_count: Number(n._enrich_insight_count || 0),
+    _enrich_keywords: Array.isArray(n._enrich_keywords) ? n._enrich_keywords : [],
   }));
 }
 function starsMapVisEdges(raw) {
