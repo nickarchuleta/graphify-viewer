@@ -1,0 +1,118 @@
+# Live Stars Group Sweep
+
+- Source: GitHub API live via curl
+- Repos scanned: **597**
+
+## Group counts
+- misc: 229
+- agents: 131
+- ai_code: 87
+- data: 44
+- mac: 41
+- graphs: 29
+- sec: 22
+- local_ai: 9
+- browser: 5
+
+## Ambiguous multi-group hits: 118
+(first 100)
+- `nickarchuleta/graphify-viewer` -> `agents` top: agents:4, graphs:2
+- `nikmcfly/MiroFish-Offline` -> `agents` top: agents:5, local_ai:1, graphs:1
+- `steel-dev/steel-browser` -> `agents` top: agents:3, browser:2
+- `google-gemini/gemini-cli` -> `agents` top: agents:3, ai_code:2
+- `AlexsJones/llmfit` -> `local_ai` top: local_ai:2, mac:1
+- `memvid/memvid` -> `graphs` top: graphs:3, agents:1
+- `pedrohcgs/claude-code-my-workflow` -> `agents` top: agents:2, ai_code:1
+- `awesome-ai-tools/curated-mcp-servers` -> `agents` top: agents:3, ai_code:2
+- `casibase/casibase` -> `agents` top: agents:4, ai_code:2, local_ai:1
+- `leoncuhk/awesome-quant-ai` -> `agents` top: agents:3, data:2
+- `agent-next/polymarket-paper-trader` -> `agents` top: agents:3, ai_code:2
+- `RhysSullivan/executor` -> `ai_code` top: ai_code:1, agents:1, graphs:1
+- `pipeshub-ai/pipeshub-ai` -> `agents` top: agents:4, graphs:2, local_ai:1
+- `eastreams/loong` -> `agents` top: agents:3, ai_code:1
+- `russelleNVy/three-man-team` -> `agents` top: agents:3, ai_code:2
+- `chadi0x/TheBigBrother` -> `sec` top: sec:3, graphs:1
+- `cporter202/agentic-ai-starters` -> `agents` top: agents:4, ai_code:1
+- `stephenleo/bmad-autonomous-development` -> `agents` top: agents:3, graphs:1
+- `math-ai-org/mathcode` -> `agents` top: agents:3, mac:1
+- `ChrisWiles/claude-code-showcase` -> `ai_code` top: ai_code:1, agents:1
+- `santifer/career-ops` -> `agents` top: agents:3, ai_code:1
+- `ravila4/claude-adhd-skills` -> `ai_code` top: ai_code:1, agents:1
+- `mattmireles/gemma-tuner-multimodal` -> `mac` top: mac:1, data:1
+- `collaborator-ai/collab-public` -> `agents` top: agents:3, ai_code:2
+- `shanraisshan/claude-code-best-practice` -> `agents` top: agents:3, ai_code:1
+- `primaprashant/awesome-voice-typing` -> `mac` top: mac:2, agents:1
+- `LucasDuys/forge` -> `agents` top: agents:3, ai_code:2
+- `final-run/finalrun-agent` -> `agents` top: agents:4, mac:1
+- `safishamsi/graphify` -> `ai_code` top: ai_code:6, graphs:3, agents:1
+- `onmyway133/ccview` -> `agents` top: agents:3, ai_code:1
+- `cporter202/agentic-ai-apis` -> `agents` top: agents:3, ai_code:1
+- `GarethManning/claude-education-skills` -> `agents` top: agents:4, ai_code:2
+- `michael-elkabetz/bgagents` -> `ai_code` top: ai_code:3, agents:3
+- `aiming-lab/MetaClaw` -> `agents` top: agents:3, ai_code:1
+- `steipete/CodeLooper` -> `mac` top: mac:1, ai_code:1
+- `steipete/sweetlink` -> `agents` top: agents:1, browser:1
+- `steipete/VibeMeter` -> `mac` top: mac:1, ai_code:1
+- `steipete/agent-rules` -> `agents` top: agents:3, ai_code:2
+- `steipete/CodexBar` -> `ai_code` top: ai_code:2, mac:1
+- `steipete/Peekaboo` -> `mac` top: mac:2, ai_code:1, agents:1
+- `cloudflare/moltworker` -> `agents` top: agents:3, ai_code:1
+- `googleworkspace/cli` -> `agents` top: agents:3, ai_code:1
+- `BloopAI/vibe-kanban` -> `agents` top: agents:3, ai_code:2
+- `sandroandric/AgentHandover` -> `ai_code` top: ai_code:3, agents:3
+- `homanp/infinite-monitor` -> `agents` top: agents:3, ai_code:1, sec:1
+- `njbrake/agent-of-empires` -> `ai_code` top: ai_code:6, agents:5
+- `MemPalace/mempalace` -> `ai_code` top: ai_code:1, graphs:1
+- `EnidPinxit/awesome-openclaw-agents` -> `agents` top: agents:3, ai_code:1
+- `m8e/graphify` -> `ai_code` top: ai_code:1, graphs:1
+- `dominikmartn/nothing-design-skill` -> `ai_code` top: ai_code:1, graphs:1
+- `juliensimon/ocel-generator` -> `agents` top: agents:4, data:1
+- `fayerman-source/startup-growth-playbook` -> `agents` top: agents:3, ai_code:1
+- `ymx10086/ResearchClaw` -> `agents` top: agents:3, ai_code:1
+- `mnfst/awesome-free-llm-apis` -> `agents` top: agents:3, ai_code:1, local_ai:1
+- `alibaba/page-agent` -> `agents` top: agents:3, ai_code:1
+- `tailcallhq/forgecode` -> `agents` top: agents:4, ai_code:1
+- `HKUDS/DeepTutor` -> `agents` top: agents:4, graphs:1
+- `zubair-trabzada/ai-sales-team-claude` -> `ai_code` top: ai_code:1, agents:1
+- `badlogic/pi-mono` -> `agents` top: agents:1, local_ai:1
+- `aaif-goose/goose` -> `agents` top: agents:3, ai_code:1
+- `peth-eth/agent-ready-by-sero` -> `agents` top: agents:3, ai_code:1
+- `abhigyanpatwari/GitNexus` -> `graphs` top: graphs:2, agents:1
+- `NVIDIA-NeMo/DataDesigner` -> `agents` top: agents:3, ai_code:1
+- `marshallrichards/ClawPhone` -> `ai_code` top: ai_code:1, agents:1
+- `KeygraphHQ/shannon` -> `graphs` top: graphs:2, sec:2
+- `Shubhamsaboo/awesome-llm-apps` -> `agents` top: agents:3, graphs:1
+- `VoltAgent/awesome-agent-skills` -> `ai_code` top: ai_code:4, agents:3
+- `Dimillian/CodexMonitor` -> `mac` top: mac:1, ai_code:1
+- `MemoriLabs/Memori` -> `agents` top: agents:3, ai_code:2, graphs:1
+- `Scrut1ny/GrapheneOS-Guide` -> `agents` top: agents:1, graphs:1, sec:1
+- `jamiepine/voicebox` -> `mac` top: mac:1, local_ai:1
+- `ALucek/agentic-memory` -> `agents` top: agents:3, data:2
+- `agenticnotetaking/arscontexta` -> `agents` top: agents:3, ai_code:1
+- `nickarchuleta/VisionClaw---Audio-focus` -> `ai_code` top: ai_code:1, agents:1
+- `Intent-Lab/VisionClaw` -> `ai_code` top: ai_code:1, agents:1
+- `manaflow-ai/cmux` -> `ai_code` top: ai_code:3, mac:2, agents:1
+- `phiat/claude-esp` -> `agents` top: agents:3, ai_code:1
+- `primeline-ai/claude-tmux-orchestration` -> `agents` top: agents:4, ai_code:2
+- `paoloanzn/free-code` -> `ai_code` top: ai_code:1, sec:1
+- `stvlynn/skills` -> `ai_code` top: ai_code:1, agents:1
+- `humanlayer/12-factor-agents` -> `agents` top: agents:4, graphs:1
+- `Blaizzy/mlx-vlm` -> `mac` top: mac:4, local_ai:2
+- `jaechang-hits/SciAgent-Skills` -> `agents` top: agents:3, mac:1, ai_code:1
+- `CoderLuii/HolyClaude` -> `agents` top: agents:3, browser:2, ai_code:1
+- `SharpAI/SwiftLM` -> `mac` top: mac:7, local_ai:2
+- `langchain-ai/deepagents` -> `agents` top: agents:4, graphs:1
+- `promptfoo/promptfoo` -> `ai_code` top: ai_code:1, agents:1, graphs:1
+- `moeru-ai/airi` -> `mac` top: mac:1, ai_code:1
+- `bytedance/deer-flow` -> `agents` top: agents:5, graphs:2
+- `Yeachan-Heo/oh-my-codex` -> `ai_code` top: ai_code:1, agents:1
+- `kepano/obsidian-skills` -> `ai_code` top: ai_code:4, agents:1
+- `flipbit03/terminal-use` -> `agents` top: agents:3, browser:1
+- `Yambr/open-computer-use` -> `agents` top: agents:3, ai_code:2
+- `c2g-dev/city2graph` -> `graphs` top: graphs:1, data:1
+- `sympozium-ai/sympozium` -> `agents` top: agents:3, ai_code:1
+- `goposta/posta` -> `graphs` top: graphs:1, sec:1
+- `jjmartres/opencode` -> `ai_code` top: ai_code:4, agents:3
+- `Railly/agentfiles` -> `ai_code` top: ai_code:5, agents:3
+- `jontsai/openclaw-command-center` -> `agents` top: agents:4, ai_code:2, local_ai:1
+- `alvinreal/awesome-openclaw-tips` -> `agents` top: agents:4, ai_code:1

@@ -1,0 +1,175 @@
+# Community Sweep Report
+
+- Stars scanned: **596**
+- Spellbook repo nodes scanned: **414**
+- Matched repo nodes: **391**
+- Missing star metadata for repo nodes: **23**
+- Community/group mismatches (heuristic): **0**
+- Multi-group ambiguous stars (needs manual review): **126**
+
+## Stars Group Counts
+- misc: 233
+- ai_code: 136
+- agents: 81
+- mac: 46
+- data: 42
+- graphs: 27
+- sec: 20
+- local_ai: 8
+- browser: 3
+
+## Potential Mismatches
+- None found by heuristic.
+
+## Missing Metadata (repo nodes not in master stars)
+- `anthropics/anthropic-quickstarts` node `anthropics_claude_quickstarts` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_claude_api` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_customer_support_agent` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_financial_data_analyst` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_computer_use_demo` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_browser_tools_api_demo` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_autonomous_coding_agent` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_claude_agent_sdk` community ``
+- `anthropics/anthropic-quickstarts` node `anthropics_claude_cookbooks` community ``
+- `anthropics/anthropic-quickstarts` node `playwright_browser_automation` community ``
+- `coleam00/archon` node `archon_archon` community ``
+- `coleam00/archon` node `archon_yamlWorkflow` community ``
+- `coleam00/archon` node `archon_orchestrator` community ``
+- `coleam00/archon` node `archon_workflowExecutor` community ``
+- `coleam00/archon` node `archon_platformAdapters` community ``
+- `coleam00/archon` node `archon_sqlitePostgres` community ``
+- `coleam00/archon` node `archon_claudeCode` community ``
+- `coleam00/archon` node `archon_gitWorktree` community ``
+- `hkuds/deeptutor` node `deeptutor_deeptutor` community ``
+- `hkuds/deeptutor` node `deeptutor_tutorbot` community ``
+- `hkuds/deeptutor` node `deeptutor_pluginmodel` community ``
+- `coleam00/archon` node `concept_yaml_workflow` community ``
+- `coleam00/archon` node `concept_ai_coding_agent` community ``
+
+## Ambiguous Group Candidates (keyword overlaps)
+- `shareAI-lab/learn-claude-code` -> chosen `ai_code` but also matched ai_code, agents
+- `e2b-dev/awesome-ai-agents` -> chosen `ai_code` but also matched ai_code, agents
+- `ml-explore/mlx` -> chosen `mac` but also matched mac, local_ai
+- `googleworkspace/cli` -> chosen `ai_code` but also matched ai_code, agents
+- `kepano/obsidian-skills` -> chosen `ai_code` but also matched ai_code, agents
+- `jarrodwatts/claude-hud` -> chosen `ai_code` but also matched ai_code, agents
+- `VoltAgent/awesome-agent-skills` -> chosen `ai_code` but also matched ai_code, agents
+- `addyosmani/agent-skills` -> chosen `ai_code` but also matched ai_code, agents
+- `MemoriLabs/Memori` -> chosen `ai_code` but also matched ai_code, agents, graphs
+- `alirezarezvani/claude-skills` -> chosen `ai_code` but also matched ai_code, agents
+- `huggingface/skills` -> chosen `agents` but also matched agents, data
+- `cloudflare/moltworker` -> chosen `ai_code` but also matched ai_code, agents
+- `langchain-ai/open-swe` -> chosen `ai_code` but also matched ai_code, agents
+- `ikaijua/Awesome-AITools` -> chosen `ai_code` but also matched ai_code, agents
+- `ChrisWiles/claude-code-showcase` -> chosen `ai_code` but also matched ai_code, agents
+- `steipete/agent-rules` -> chosen `ai_code` but also matched ai_code, agents
+- `ml-explore/mlx-lm` -> chosen `mac` but also matched mac, local_ai
+- `agenticnotetaking/arscontexta` -> chosen `ai_code` but also matched ai_code, agents
+- `superagent-ai/grok-cli` -> chosen `agents` but also matched agents, graphs
+- `collaborator-ai/collab-public` -> chosen `ai_code` but also matched ai_code, agents
+- `mnfst/awesome-free-llm-apis` -> chosen `ai_code` but also matched ai_code, agents, local_ai
+- `CoderLuii/HolyClaude` -> chosen `ai_code` but also matched ai_code, agents, browser
+- `financial-datasets/mcp-server` -> chosen `ai_code` but also matched ai_code, data
+- `ml-explore/mlx-swift` -> chosen `mac` but also matched mac, local_ai
+- `dominikmartn/nothing-design-skill` -> chosen `ai_code` but also matched ai_code, graphs
+- `trevin-creator/autoresearch-mlx` -> chosen `mac` but also matched mac, local_ai, data
+- `ComposioHQ/awesome-claude-plugins` -> chosen `ai_code` but also matched ai_code, agents
+- `GradientHQ/parallax` -> chosen `local_ai` but also matched local_ai, data
+- `mozilla-ai/any-agent` -> chosen `ai_code` but also matched ai_code, agents
+- `RhysSullivan/executor` -> chosen `ai_code` but also matched ai_code, agents, graphs
+- `pedrohcgs/claude-code-my-workflow` -> chosen `ai_code` but also matched ai_code, agents
+- `microsoft/powerbi-modeling-mcp` -> chosen `ai_code` but also matched ai_code, agents
+- `chadi0x/TheBigBrother` -> chosen `graphs` but also matched graphs, sec
+- `sandroandric/AgentHandover` -> chosen `ai_code` but also matched ai_code, agents
+- `marshallrichards/ClawPhone` -> chosen `ai_code` but also matched ai_code, agents
+- `cporter202/agentic-ai-apis` -> chosen `ai_code` but also matched ai_code, agents
+- `ymx10086/ResearchClaw` -> chosen `ai_code` but also matched ai_code, agents
+- `jontsai/openclaw-command-center` -> chosen `ai_code` but also matched ai_code, agents, local_ai
+- `agent-next/polymarket-paper-trader` -> chosen `ai_code` but also matched ai_code, agents
+- `GarethManning/claude-education-skills` -> chosen `ai_code` but also matched ai_code, agents
+- `phiat/claude-esp` -> chosen `ai_code` but also matched ai_code, agents
+- `jjmartres/opencode` -> chosen `ai_code` but also matched ai_code, agents
+- `primaprashant/awesome-voice-typing` -> chosen `mac` but also matched mac, agents
+- `ravila4/claude-adhd-skills` -> chosen `ai_code` but also matched ai_code, agents
+- `goposta/posta` -> chosen `graphs` but also matched graphs, sec
+- `peth-eth/agent-ready-by-sero` -> chosen `ai_code` but also matched ai_code, agents
+- `flipbit03/terminal-use` -> chosen `agents` but also matched agents, browser
+- `michael-elkabetz/bgagents` -> chosen `ai_code` but also matched ai_code, agents
+- `EnidPinxit/awesome-openclaw-agents` -> chosen `ai_code` but also matched ai_code, agents
+- `fayerman-source/startup-growth-playbook` -> chosen `ai_code` but also matched ai_code, agents
+- `LucasDuys/forge` -> chosen `ai_code` but also matched ai_code, agents
+- `onmyway133/ccview` -> chosen `ai_code` but also matched ai_code, agents
+- `juliensimon/ocel-generator` -> chosen `agents` but also matched agents, data
+- `ofershap/agents-control-tower` -> chosen `ai_code` but also matched ai_code, agents
+- `awesome-ai-tools/curated-mcp-servers` -> chosen `ai_code` but also matched ai_code, agents
+- `affaan-m/everything-claude-code` -> chosen `ai_code` but also matched ai_code, agents, sec
+- `anthropics/claude-code` -> chosen `ai_code` but also matched ai_code, agents
+- `Shubhamsaboo/awesome-llm-apps` -> chosen `agents` but also matched agents, graphs
+- `google-gemini/gemini-cli` -> chosen `ai_code` but also matched ai_code, agents
+- `browser-use/browser-use` -> chosen `agents` but also matched agents, browser
+- `openai/codex` -> chosen `ai_code` but also matched ai_code, agents
+- `NousResearch/hermes-agent` -> chosen `ai_code` but also matched ai_code, agents
+- `bytedance/deer-flow` -> chosen `agents` but also matched agents, graphs
+- `666ghj/MiroFish` -> chosen `agents` but also matched agents, graphs
+- `MemPalace/mempalace` -> chosen `ai_code` but also matched ai_code, graphs
+- `aaif-goose/goose` -> chosen `ai_code` but also matched ai_code, agents
+- `shanraisshan/claude-code-best-practice` -> chosen `ai_code` but also matched ai_code, agents
+- `KeygraphHQ/shannon` -> chosen `graphs` but also matched graphs, sec
+- `badlogic/pi-mono` -> chosen `agents` but also matched agents, local_ai
+- `santifer/career-ops` -> chosen `ai_code` but also matched ai_code, agents
+- `Yeachan-Heo/oh-my-claudecode` -> chosen `ai_code` but also matched ai_code, agents
+- `luongnv89/claude-howto` -> chosen `ai_code` but also matched ai_code, agents
+- `BloopAI/vibe-kanban` -> chosen `ai_code` but also matched ai_code, agents
+- `safishamsi/graphify` -> chosen `ai_code` but also matched ai_code, agents, graphs
+- `AlexsJones/llmfit` -> chosen `mac` but also matched mac, local_ai
+- `volcengine/OpenViking` -> chosen `ai_code` but also matched ai_code, agents, graphs
+- `Yeachan-Heo/oh-my-codex` -> chosen `ai_code` but also matched ai_code, agents
+- `mvanhorn/last30days-skill` -> chosen `ai_code` but also matched ai_code, agents
+- `langchain-ai/deepagents` -> chosen `agents` but also matched agents, graphs
+- `promptfoo/promptfoo` -> chosen `ai_code` but also matched ai_code, agents, graphs, sec
+- `humanlayer/12-factor-agents` -> chosen `agents` but also matched agents, graphs
+- `HKUDS/DeepTutor` -> chosen `agents` but also matched agents, graphs
+- `alibaba/page-agent` -> chosen `ai_code` but also matched ai_code, agents
+- `jamiepine/voicebox` -> chosen `mac` but also matched mac, local_ai
+- `memvid/memvid` -> chosen `agents` but also matched agents, graphs
+- `manaflow-ai/cmux` -> chosen `mac` but also matched mac, ai_code, agents
+- `steipete/CodexBar` -> chosen `mac` but also matched mac, ai_code
+- `Blaizzy/mlx-audio` -> chosen `mac` but also matched mac, local_ai
+- `tailcallhq/forgecode` -> chosen `ai_code` but also matched ai_code, agents
+- `casibase/casibase` -> chosen `ai_code` but also matched ai_code, agents, graphs, data
+- `Blaizzy/mlx-vlm` -> chosen `mac` but also matched mac, local_ai
+- `Dimillian/CodexMonitor` -> chosen `mac` but also matched mac, ai_code
+- `aiming-lab/MetaClaw` -> chosen `ai_code` but also matched ai_code, agents
+- `steipete/Peekaboo` -> chosen `mac` but also matched mac, ai_code, agents
+- `pipeshub-ai/pipeshub-ai` -> chosen `agents` but also matched agents, local_ai, graphs
+- `Intent-Lab/VisionClaw` -> chosen `ai_code` but also matched ai_code, agents
+- `nikmcfly/MiroFish-Offline` -> chosen `agents` but also matched agents, local_ai, graphs
+- `NVIDIA-NeMo/DataDesigner` -> chosen `ai_code` but also matched ai_code, agents
+- `njbrake/agent-of-empires` -> chosen `ai_code` but also matched ai_code, agents
+- `mattmireles/gemma-tuner-multimodal` -> chosen `mac` but also matched mac, data
+- `c2g-dev/city2graph` -> chosen `graphs` but also matched graphs, data
+- `ARahim3/mlx-tune` -> chosen `mac` but also matched mac, local_ai, graphs, data
+- `homanp/infinite-monitor` -> chosen `ai_code` but also matched ai_code, agents, sec
+- `eastreams/loong` -> chosen `ai_code` but also matched ai_code, agents
+- `ALucek/agentic-memory` -> chosen `agents` but also matched agents, data
+- `Railly/agentfiles` -> chosen `ai_code` but also matched ai_code, agents
+- `sympozium-ai/sympozium` -> chosen `ai_code` but also matched ai_code, agents
+- `russelleNVy/three-man-team` -> chosen `ai_code` but also matched ai_code, agents
+- `steipete/VibeMeter` -> chosen `mac` but also matched mac, ai_code
+- `math-ai-org/mathcode` -> chosen `mac` but also matched mac, agents
+- `SharpAI/SwiftLM` -> chosen `mac` but also matched mac, local_ai
+- `leoncuhk/awesome-quant-ai` -> chosen `agents` but also matched agents, data
+- `Scrut1ny/GrapheneOS-Guide` -> chosen `agents` but also matched agents, graphs, sec
+- `alvinreal/awesome-openclaw-tips` -> chosen `ai_code` but also matched ai_code, agents
+- `final-run/finalrun-agent` -> chosen `mac` but also matched mac, agents
+- `GitHpriyanshu23/Clawde_Code` -> chosen `ai_code` but also matched ai_code, agents
+- `steipete/CodeLooper` -> chosen `mac` but also matched mac, ai_code
+- `steipete/sweetlink` -> chosen `agents` but also matched agents, browser
+- `jaechang-hits/SciAgent-Skills` -> chosen `mac` but also matched mac, ai_code, agents
+- `cporter202/agentic-ai-starters` -> chosen `ai_code` but also matched ai_code, agents
+- `stvlynn/skills` -> chosen `ai_code` but also matched ai_code, agents
+- `Yambr/open-computer-use` -> chosen `ai_code` but also matched ai_code, agents
+- `primeline-ai/claude-tmux-orchestration` -> chosen `ai_code` but also matched ai_code, agents
+- `m8e/graphify` -> chosen `ai_code` but also matched ai_code, graphs
+- `DhivakaranRavi/kiteguard` -> chosen `ai_code` but also matched ai_code, sec
+- `nickarchuleta/VisionClaw---Audio-focus` -> chosen `ai_code` but also matched ai_code, agents

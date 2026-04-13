@@ -1,0 +1,550 @@
+node_id	label	community_cid	community_label	source_file	source_url
+awesomedata__awesome-public-datasets_repo	awesomedata/awesome-public-datasets	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+awesomedata__awesome-public-datasets_opendata	Open Datasets Collection	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+awesomedata__awesome-public-datasets_topic_datasets	Topic: datasets	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+awesomedata__awesome-public-datasets_topic_opendata	Topic: opendata	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+msitarzewski__agency-agents_repo	msitarzewski/agency-agents	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/msitarzewski__agency-agents.md	
+msitarzewski__agency-agents_concept_ai_agency	AI Agency (Multi-Role Agent System)	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/msitarzewski__agency-agents.md	
+msitarzewski__agency-agents_concept_frontend_wizard	Frontend Wizard Agent	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/msitarzewski__agency-agents.md	
+msitarzewski__agency-agents_concept_shell	Shell Language	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/msitarzewski__agency-agents.md	
+nicedreamzapp__claude-code-local_repo	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude-code-local_concept_local_ai	Local AI on Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude-code-local_concept_claude_code	Claude Code	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude-code-local_concept_google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude-code-local_concept_python	Python Language	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat__claude-esp_repo	phiat/claude-esp	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat__claude-esp_concept_stream_output	Real-time Claude Code Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat__claude-esp_concept_tui	TUI (Terminal UI)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat__claude-esp_concept_go	Go Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_nickarchuleta	nickarchuleta (GitHub User)	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+concept_spellbook_stub	Spellbook Stub (Graphify Placeholder)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+concept_apple_silicon	Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_subagents	Claude Code Subagents	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_tool_calls	Tool Calls (AI Agent)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+awesomeaitools_curated_ai_coding_tools	awesome-ai-tools/curated-ai-coding-tools	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+awesomeaitools_ai_coding_tools_topic	AI Coding Tools (Curated List)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+awesomeaitools_topic_aider	Aider (AI Coding Tool)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+awesomeaitools_topic_cursor	Cursor (AI IDE)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+awesomeaitools_topic_copilot	GitHub Copilot	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+awesomeaitools_topic_claude_code	Claude Code (AI Coding Tool)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+storybookjs_addon_designs	storybookjs/addon-designs	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/storybookjs__addon-designs.md	
+storybookjs_storybook	Storybook	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/storybookjs__addon-designs.md	
+storybookjs_figma	Figma	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/storybookjs__addon-designs.md	
+storybookjs_addon_designs_typescript	TypeScript	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/storybookjs__addon-designs.md	
+anthropics_claude_quickstarts	anthropics/claude-quickstarts	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_claude_api	Claude API	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_customer_support_agent	Customer Support Agent Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_financial_data_analyst	Financial Data Analyst Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_computer_use_demo	Computer Use Demo Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_browser_tools_api_demo	Browser Tools API Demo Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_autonomous_coding_agent	Autonomous Coding Agent Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_claude_agent_sdk	Claude Agent SDK	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_claude_cookbooks	Claude Cookbooks	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+anthropics_claude_code_repo	anthropics/claude-code	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/anthropics__claude-code.md	
+anthropics_claude_code_concept	Claude Code (Agentic Terminal Tool)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/anthropics__claude-code.md	
+nickarchuleta_spellbook	nickarchuleta GitHub Spellbook	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-coding-tools.md	
+playwright_browser_automation	Playwright (Browser Automation)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__anthropic-quickstarts.md	
+docling_docling	Docling (IBM Research Document Parser)	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_doclingdocument	DoclingDocument (Unified IR)	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_layoutmodel	DiT Layout Model	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_tableformer	TableFormer Table Structure Model	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_ocrlayer	OCR Layer (EasyOCR / Tesseract)	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_llamaindex_integration	LlamaIndex DoclingReader Integration	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_langchain_integration	LangChain DoclingLoader Integration	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+docling_llm_ingestion	LLM Document Ingestion Preprocessor	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+qodoskills_qodoskills	Qodo Skills (qodo-ai)	0	🖥️ This Mac	openclaw/spellbook-homework/qodo-ai__qodo-skills.md	
+goose_goose	Goose AI Agent (AAIF / Block)	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+goose_acp	ACP Agent Communication Protocol	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+goose_mcp_integration	Goose MCP Extension Ecosystem (70+ extensions)	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+goose_multiProvider	Goose Multi-Provider LLM Gateway	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+goose_tauriDesktop	Goose Tauri Desktop App	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+deeplivecam_deeplivecam	Deep-Live-Cam (Real-time Face Swap)	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11	openclaw/spellbook-homework/hacksider__Deep-Live-Cam.md	
+deeplivecam_insightface	InsightFace / RetinaFace ONNX Models	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11	openclaw/spellbook-homework/hacksider__Deep-Live-Cam.md	
+deeplivecam_inswapper	inswapper_128 ONNX Face Swap Model	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11	openclaw/spellbook-homework/hacksider__Deep-Live-Cam.md	
+deeplivecam_gfpgan	GFPGAN / CodeFormer Face Enhancer	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11	openclaw/spellbook-homework/hacksider__Deep-Live-Cam.md	
+deeplivecam_onnxruntime	ONNX Runtime (CPU/GPU/CoreML/DirectML)	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11	openclaw/spellbook-homework/hacksider__Deep-Live-Cam.md	
+archon_archon	Archon AI Coding Workflow Engine	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_yamlWorkflow	Archon YAML Workflow Definition	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_orchestrator	Archon Orchestrator (Message Routing & Context Management)	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_workflowExecutor	Archon Workflow Executor	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_platformAdapters	Archon Platform Adapters (Web, CLI, Telegram, Slack, Discord, GitHub)	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_sqlitePostgres	Archon SQLite / PostgreSQL Data Store	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_claudeCode	Claude Code (AI Assistant in Archon)	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+archon_gitWorktree	Git Worktree Isolation (Archon)	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+nicedream_claudecodelocal	claude-code-local (Run Claude Code Locally on Apple Silicon)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+ligobio_alphafold3	AlphaFold3 Open-Source (Ligo Biosciences)	0	🖥️ This Mac	openclaw/spellbook-homework/Ligo-Biosciences__AlphaFold3.md	
+supervision_supervision	Roboflow Supervision (CV Post-Processing Toolkit)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+supervision_detections	Supervision Detections Data Class	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+supervision_bytetrack	ByteTrack / SORT Multi-Object Tracker	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+supervision_sahi	SAHI Sliced Inference Integration	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+supervision_yolo	YOLO (Ultralytics) Model Integration	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+deeptutor_deeptutor	DeepTutor Agent-Native Personalized Tutoring (HKUDS)	0	🖥️ This Mac	openclaw/spellbook-homework/hkuds__deeptutor.md	
+deeptutor_tutorbot	DeepTutor TutorBot (Persistent Autonomous AI Tutor)	0	🖥️ This Mac	openclaw/spellbook-homework/hkuds__deeptutor.md	
+deeptutor_pluginmodel	DeepTutor Two-Layer Plugin Model (Tools + Capabilities)	0	🖥️ This Mac	openclaw/spellbook-homework/hkuds__deeptutor.md	
+concept_mcp	Model Context Protocol (MCP)	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+concept_llamaindex	LlamaIndex	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+concept_langchain	LangChain	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+concept_rag	Retrieval-Augmented Generation (RAG)	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+concept_multiagent_orchestration	Multi-Agent Orchestration	0	🖥️ This Mac	openclaw/spellbook-homework/aaif-goose__goose.md	
+concept_yaml_workflow	YAML-Defined AI Workflow	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+concept_computer_vision	Computer Vision Post-Processing	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+concept_protein_structure	Protein Structure Prediction	0	🖥️ This Mac	openclaw/spellbook-homework/Ligo-Biosciences__AlphaFold3.md	
+concept_local_llm	Local LLM Inference (Apple Silicon)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_deepfake	Deepfake / AI Face Swap Technology	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11	openclaw/spellbook-homework/hacksider__Deep-Live-Cam.md	
+concept_document_parsing	Document Parsing and Conversion	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/docling-project__docling.md	
+concept_ai_coding_agent	AI Coding Agent / Autonomous Dev Workflow	0	🖥️ This Mac	openclaw/spellbook-homework/coleam00__archon.md	
+louisho5_picobot	louisho5/picobot	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/louisho5__picobot.md	
+louisho5_picobot_go	Go (Language)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/louisho5__picobot.md	
+louisho5_picobot_selfhosted_bot	Self-hosted Bot (Single Binary)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/louisho5__picobot.md	
+sharpai_swiftlm	SharpAI/SwiftLM	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_swift	Swift (Language)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_mlx	MLX (Apple ML Framework)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_apple_silicon	Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_openai_api	OpenAI-Compatible API	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_turboquant	TurboQuant KV Cache Compression	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_moe	Mixture of Experts (MoE) Models	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+sharpai_swiftlm_on_device_ai	On-Device AI Inference	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+browseruse_browseruse	browser-use/browser-use	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_chromium_cdp	Chromium CDP (Chrome DevTools Protocol)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_playwright	Playwright (Browser Automation)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_mcp_integration	MCP Server Integration	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_pydantic_v2	Pydantic v2 Schema Validation	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_agent_loop	LLM Agent Loop (task→LLM→action→observe)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_skills_system	Browser-Use Skills System	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_cloud_browser	Browser Use Cloud (Stealth Remote Browser)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_bu_bench	BU Bench V1 (100-task Benchmark)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_anthropic	Anthropic API (Claude)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_openai	OpenAI API	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_google_gemini	Google Gemini API	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_openrouter	OpenRouter API	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+browseruse_dom_parsing	DOM Parsing and Accessibility Tree	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+nicedreamzapp_claude_code_local	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_local_apple_silicon	Apple Silicon (Local AI Inference)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_local_turboquant	Google TurboQuant (122B Model Quantization)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_llm_inference_server	LLM Inference Server	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/SharpAI__SwiftLM.md	
+concept_browser_automation	Browser Automation for AI Agents	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/browser-use__browser-use.md	
+concept_local_ai_no_cloud	Local AI (No Cloud, No API Fees)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+oh_my_codex_repo	Yeachan-Heo/oh-my-codex	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+oh_my_codex_omx	OmX - Oh My codeX	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+oh_my_codex_hooks	Codex Hooks System	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+oh_my_codex_agent_teams	Agent Teams for Codex	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+oh_my_codex_huds	HUDs for Codex	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+caveman_repo	JuliusBrussee/caveman	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+caveman_token_compression	Caveman Token Compression (65% reduction)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+caveman_claude_code_skill	Caveman Claude Code Skill	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+caveman_prompt_engineering	Caveman Prompt Engineering Style	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+nicedreamzapp_claude_code_local_repo	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local_apple_silicon	Claude Code on Apple Silicon Local AI	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local_122b_model	122B Local Model at 41 tok/s	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local_turboquant	Google TurboQuant Quantization	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_claude_code	Claude Code	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/anthropics__claude-code.md	
+concept_llm	Large Language Model (LLM)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+concept_anthropic	Anthropic	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+concept_token_efficiency	Token Efficiency	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/JuliusBrussee__caveman.md	
+concept_local_ai	Local AI (No Cloud)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_codex	OpenAI Codex	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+nickarchuleta_user	nickarchuleta (GitHub user)	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/Yeachan-Heo__oh-my-codex.md	
+gongxings__kemeng_ai_anime_creation	Kemeng AI Anime Creation	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/gongxings__kemeng-ai-anime-creation.md	
+openhands__software_agent_sdk	OpenHands Software Agent SDK	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/OpenHands__software-agent-sdk.md	
+nicedreamzapp__claude_code_local	Claude Code Local (Apple Silicon)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept__ai_video_creation	AI Video Creation	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/gongxings__kemeng-ai-anime-creation.md	
+concept__digital_studio	Local Digital Studio	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/gongxings__kemeng-ai-anime-creation.md	
+concept__ai_agent_sdk	AI Agent SDK	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/OpenHands__software-agent-sdk.md	
+concept__modular_sdk	Modular SDK Design	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/OpenHands__software-agent-sdk.md	
+concept__local_ai	Local AI Inference	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept__apple_silicon	Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept__google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept__claude_code	Claude Code	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept__openhands_v1	OpenHands V1	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/OpenHands__software-agent-sdk.md	
+person__nickarchuleta	Nick Archuleta	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/gongxings__kemeng-ai-anime-creation.md	
+pipeshub_ai__pipeshub_ai	PipesHub AI - Enterprise Workplace AI Platform	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pipeshub-ai__pipeshub-ai.md	
+pipeshub_ai__enterprise_search	Enterprise Search	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pipeshub-ai__pipeshub-ai.md	
+pipeshub_ai__workflow_automation	Workflow Automation	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pipeshub-ai__pipeshub-ai.md	
+pipeshub_ai__knowledge_graph	Knowledge Graph (PipesHub)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pipeshub-ai__pipeshub-ai.md	
+pipeshub_ai__langchain	LangChain Integration	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/pipeshub-ai__pipeshub-ai.md	
+pipeshub_ai__langgraph	LangGraph Integration	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pipeshub-ai__pipeshub-ai.md	
+datasets__sp500	S&P 500 Index Dataset	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/datasets__s-and-p-500.md	
+datasets__sp500_financial_data	Financial Market Data - S&P 500	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/datasets__s-and-p-500.md	
+karpathy__nanochat	NanoChat - Minimal ChatGPT Clone by Karpathy	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/karpathy__nanochat.md	
+anthropics__claude_quickstarts	Claude Quickstarts - Developer Starter Projects	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__customer_support_agent	Customer Support Agent Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__financial_data_analyst	Financial Data Analyst Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__computer_use_demo	Computer Use Demo Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__browser_tools_api_demo	Browser Tools API Demo Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__autonomous_coding_agent	Autonomous Coding Agent Quickstart	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__claude_api	Claude API	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__claude_agent_sdk	Claude Agent SDK	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+anthropics__claude_quickstarts__playwright	Playwright Browser Automation	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/anthropics__claude-quickstarts.md	
+nicedreamzapp__apple_silicon	Apple Silicon Local AI Inference	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__google_turboquant	Google TurboQuant Quantization	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+pydantic__genai_prices	GenAI Prices - LLM API Cost Calculator	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pydantic__genai-prices.md	
+pydantic__llm_inference_apis	LLM Inference API Pricing	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/pydantic__genai-prices.md	
+torflow_repo	unchartedsoftware/torflow	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/unchartedsoftware__torflow.md	
+torflow_tor_network	Tor Network	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/unchartedsoftware__torflow.md	
+torflow_data_flow_visualization	Data Flow Visualization	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/unchartedsoftware__torflow.md	
+torflow_javascript	JavaScript	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/unchartedsoftware__torflow.md	
+watchtower_repo	lajosdeme/watchtower	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/lajosdeme__watchtower.md	
+watchtower_terminal_dashboard	Terminal-based Global Intelligence Dashboard	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/lajosdeme__watchtower.md	
+watchtower_go	Go Language	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/lajosdeme__watchtower.md	
+watchtower_intelligence_monitoring	Intelligence Monitoring	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/lajosdeme__watchtower.md	
+claude_code_local_repo	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local_python	Python	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local_google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_esp_repo	phiat/claude-esp	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp_hidden_output_streaming	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp_tui	TUI (Terminal User Interface)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp_go	Go Language (claude-esp)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp_agents	AI Agents (claude-esp context)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+unitedbyai__droidclaw_repo	unitedbyai/droidclaw	0	🖥️ This Mac	openclaw/spellbook-homework/unitedbyai__droidclaw.md	
+unitedbyai__droidclaw_concept_phone_ai_agent	Old Phone AI Agent (ADB)	0	🖥️ This Mac	openclaw/spellbook-homework/unitedbyai__droidclaw.md	
+unitedbyai__droidclaw_concept_adb	Android Debug Bridge (ADB)	0	🖥️ This Mac	openclaw/spellbook-homework/unitedbyai__droidclaw.md	
+unitedbyai__droidclaw_concept_screen_reader	Screen Reading AI	0	🖥️ This Mac	openclaw/spellbook-homework/unitedbyai__droidclaw.md	
+unitedbyai__droidclaw_concept_typescript	TypeScript	0	🖥️ This Mac	openclaw/spellbook-homework/unitedbyai__droidclaw.md	
+nicedreamzapp__claude_code_local_repo	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude_code_local_concept_local_ai	Local AI (No Cloud)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude_code_local_concept_apple_silicon	Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude_code_local_concept_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude_code_local_concept_python	Python	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp__claude_code_local_concept_122b_model	122B Language Model	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+karpathy_nanochat	karpathy/nanochat	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/karpathy__nanochat.md	
+phiat_claude_esp	phiat/claude-esp	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+bloopai_vibe_kanban	BloopAI/vibe-kanban	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/BloopAI__vibe-kanban.md	
+roboflow_supervision	roboflow/supervision	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+skyvern_ai_skyvern	Skyvern-AI/skyvern	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/Skyvern-AI__skyvern.md	
+m8e_graphify	m8e/graphify	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+safishamsi_graphify	safishamsi/graphify	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_chatgpt	ChatGPT	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/karpathy__nanochat.md	
+concept_multi_agent_orchestration	Multi-Agent Orchestration	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/BloopAI__vibe-kanban.md	
+concept_kanban_board	Kanban Board	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/BloopAI__vibe-kanban.md	
+concept_object_tracking	Object Detection and Tracking	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+concept_vision_llm	Vision LLM	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/Skyvern-AI__skyvern.md	
+concept_mcp_server	MCP Server	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/Skyvern-AI__skyvern.md	
+concept_knowledge_graph	Knowledge Graph	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+concept_community_detection	Community Detection	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+concept_graphrag	GraphRAG	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_playwright	Playwright	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/Skyvern-AI__skyvern.md	
+concept_tui	Terminal UI (TUI)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_openclaw	OpenClaw	0	🖥️ This Mac	openclaw/spellbook-homework/openclaw__openclaw.md	
+concept_gsd	GSD Workflow	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/BloopAI__vibe-kanban.md	
+concept_rust	Rust	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/BloopAI__vibe-kanban.md	
+concept_python	Python	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/roboflow__supervision.md	
+notion_cli_tool	notion-cli (0xble)	0	🖥️ This Mac	openclaw/spellbook-homework/0xble__notion-cli.md	
+notion_cli_mcp	Model Context Protocol (MCP)	0	🖥️ This Mac	openclaw/spellbook-homework/0xble__notion-cli.md	
+notion_cli_notion	Notion	0	🖥️ This Mac	openclaw/spellbook-homework/0xble__notion-cli.md	
+notion_cli_go	Go (programming language)	0	🖥️ This Mac	openclaw/spellbook-homework/0xble__notion-cli.md	
+agent_zero_framework	AGENT-ZERO Framework (msitarzewski)	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/msitarzewski__AGENT-ZERO.md	
+agent_zero_agents_md	AGENTS.md Standard	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/msitarzewski__AGENT-ZERO.md	
+agent_zero_ai_dev	AI-Assisted Software Development	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/msitarzewski__AGENT-ZERO.md	
+claude_code_local	claude-code-local (nicedreamzapp)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local_local_ai	Local AI Inference	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_esp_tool	claude-esp (phiat)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp_claude_code	Claude Code	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp_subagents	Subagents (Claude Code)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+sentry_cli_sentry_cli	0xble/sentry-cli	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xble__sentry-cli.md	
+sentry_cli_rust	Rust Language	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xble__sentry-cli.md	
+sentry_cli_sentry	Sentry Error Monitoring	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xble__sentry-cli.md	
+career_ops_repo	santifer/career-ops	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_typescript	TypeScript Language	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_go	Go Language	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_playwright	Playwright Browser Automation	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_claude_code	Claude Code CLI	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_opencode	OpenCode CLI	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_slash_commands	Career-Ops Slash Command System	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_ats_pdf	ATS-Optimized PDF Generation	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_yaml_pipeline	YAML Pipeline State Tracker	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_multi_agent	Multi-Agent Job Search Orchestration	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_human_in_loop	Human-in-the-Loop Design Pattern	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+career_ops_openclaw_patterns	OpenClaw Agent Orchestration Patterns	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/santifer__career-ops.md	
+claude_esp_hidden_output	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+ordercli_cli	steipete/ordercli	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/steipete__ordercli.md	
+ordercli_foodora	Foodora	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/steipete__ordercli.md	
+ordercli_deliveroo	Deliveroo	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/steipete__ordercli.md	
+agentfiles_repo	Railly/agentfiles	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/Railly__agentfiles.md	
+agentfiles_obsidian	Obsidian Integration	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/Railly__agentfiles.md	
+agentfiles_claude_code	Claude Code (agentfiles target)	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/Railly__agentfiles.md	
+agentfiles_cursor	Cursor (agentfiles target)	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/Railly__agentfiles.md	
+agentfiles_codex	Codex (agentfiles target)	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/Railly__agentfiles.md	
+phiat_claude_esp_repo	phiat/claude-esp	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_claude_esp_tui	TUI Terminal Streaming (claude-esp)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+humanlayer_12factor_repo	humanlayer/12-factor-agents	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/humanlayer__12-factor-agents.md	
+humanlayer_12factor_principles	12-Factor Agent Principles	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/humanlayer__12-factor-agents.md	
+humanlayer_12factor_llm	LLM-Powered Production Software	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/humanlayer__12-factor-agents.md	
+concept_ai_agent_tools	AI Agent Tooling Ecosystem	9	🌊 memory &amp; retrieval	openclaw/spellbook-homework/Railly__agentfiles.md	
+concept_claude_code_observability	Claude Code Observability	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+curated_ai_automation__repo	awesome-ai-tools/curated-ai-automation	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-automation.md	
+curated_ai_automation__awesome_list	Curated AI Automation Awesome List	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-automation.md	
+curated_ai_automation__n8n	n8n Workflow Automation	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-automation.md	
+curated_ai_automation__make	Make (formerly Integromat)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-automation.md	
+curated_ai_automation__no_code	No-Code AI Platforms	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-automation.md	
+litertmlm__repo	google-ai-edge/LiteRT-LM	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/google-ai-edge__LiteRT-LM.md	
+litertmlm__google_ai_edge	Google AI Edge	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/google-ai-edge__LiteRT-LM.md	
+litertmlm__cpp_runtime	C++ LLM Runtime	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/google-ai-edge__LiteRT-LM.md	
+claude_code_local__repo	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local__apple_silicon	Apple Silicon Local AI	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local__google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_code_local__122b_model	122B Local LLM Model	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claude_esp__repo	phiat/claude-esp	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp__streaming_output	Claude ESP Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp__tui	Terminal UI (TUI)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp__go_lang	Go Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp__subagents	Claude Subagents	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claude_esp__tool_calls	Claude Tool Calls	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+openai_codex__repo	openai/codex	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/openai__codex.md	
+openai_codex__rust_agent	Rust-based Coding Agent	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/openai__codex.md	
+openai_codex__terminal_agent	Terminal Coding Agent	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/openai__codex.md	
+nickarchuleta__user	nickarchuleta (GitHub User)	5	🧠 Karpathy &amp; Research Foundry	openclaw/spellbook-homework/awesome-ai-tools__curated-ai-automation.md	
+mlxvlm_repo	Blaizzy/mlx-vlm	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/Blaizzy__mlx-vlm.md	
+mlxvlm_vlm	Vision Language Model (VLM)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/Blaizzy__mlx-vlm.md	
+mlxvlm_mlx	MLX Framework (Apple)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/Blaizzy__mlx-vlm.md	
+mlxvlm_applesilicon	Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/Blaizzy__mlx-vlm.md	
+mlxvlm_localai	Local AI Inference	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/Blaizzy__mlx-vlm.md	
+meshtastic_firmware_repo	meshtastic/firmware	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/meshtastic__firmware.md	
+meshtastic_lora	LoRa Mesh Networking	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/meshtastic__firmware.md	
+meshtastic_esp32	ESP32 Microcontroller	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/meshtastic__firmware.md	
+meshtastic_offgrid	Off-Grid Communication	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/meshtastic__firmware.md	
+meshtastic_nrf52	nRF52 MCU Platform	8	🔥 harnesses &amp; CLIs · codex · 8	openclaw/spellbook-homework/meshtastic__firmware.md	
+claudecodelocal_repo	nicedreamzapp/claude-code-local	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudecodelocal_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudecodelocal_122b	122B Local Model	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudeesp_repo	phiat/claude-esp	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claudeesp_tui	TUI Terminal Interface	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claudeesp_streaming	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claudeesp_subagents	Claude Code Subagents	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+nicedreamzapp_author	nicedreamzapp (GitHub Author)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudecode_platform	Claude Code Platform	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+nicedreamzapp_claude_code_local_concept_local_ai	Local AI Inference (Apple Silicon)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_local_concept_turbo_quant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat_claude_esp_concept_streaming	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_claude_esp_concept_tui	Terminal UI (TUI)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+m8e_graphify_concept_knowledge_graph	Knowledge Graph with Community Detection	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+m8e_graphify_concept_audit	Knowledge Graph Audit Report	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+safishamsi_graphify_concept_multi_tool	Multi-Tool AI Coding Assistant Skill	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+safishamsi_graphify_concept_graphrag	GraphRAG / Knowledge Graph RAG	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_no_cloud_api	No Cloud / No API Fees	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_hidden_output_streaming	Hidden Output Streaming (thinking, tool calls, subagents)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_go_lang	Go Programming Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_python_lang	Python Programming Language	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_122b_model	122B Model	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_local_ai_apple_silicon	Local AI on Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_122b_model	122B Model (TurboQuant)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_runtime	Claude Code Runtime	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_no_cloud_no_api_fees	No Cloud No API Fees	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat_claude_code_hidden_output	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_tui	TUI (Terminal User Interface)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_go_lang	Go Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_thinking_tool_calls_subagents	Thinking Tool Calls Subagents Observability	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+nicedreamzapp_python_lang	Python Language	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+shared_claude_code_ecosystem	Claude Code Ecosystem	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nickarchuleta_curator	nickarchuleta (Curator)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_local_concept_no_cloud	No Cloud, No API Fees (Local Inference)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat_claude_esp_concept_hidden_output	Claude Code Hidden Output Streaming (thinking, tool calls, subagents)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+m8e_graphify_concept_knowledge_graph_skill	Claude Code Skill for Knowledge Graph Generation	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+m8e_graphify_concept_community_detection	Community Detection in Knowledge Graphs	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+m8e_graphify_concept_god_nodes	God Nodes (High-Centrality Knowledge Graph Nodes)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+safishamsi_graphify_concept_ai_coding_skill	AI Coding Assistant Skill (Multi-platform)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_gemini_cli	Gemini CLI (Google AI Coding Tool)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_opencode	OpenCode (Open-source AI Coding CLI)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_cursor	Cursor (AI Code Editor)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_factory_droid	Factory Droid (AI Coding Agent)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_trae	Trae (AI Coding Tool)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_google_antigravity	Google Antigravity (AI Coding Platform)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_github_copilot_cli	GitHub Copilot CLI	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_go_language	Go Programming Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_local_ai_inference	Local AI Inference on Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_claude_code_tool	Claude Code CLI Tool	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_no_cloud_no_api_fees	No Cloud No API Fees Pattern	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_claude_hidden_output_streaming	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_subagent_observability	Subagent Observability	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_no_cloud	No Cloud / No API Fees	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_hidden_output	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_thinking	Thinking (Hidden LLM Output)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_claude_esp_streaming_tui	Claude ESP - Streaming TUI for Hidden Output	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+m8e_graphify_claude_code_skill	m8e/graphify - Claude Code Skill for Knowledge Graph	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+safishamsi_graphify_ai_coding_skill	safishamsi/graphify - Multi-AI-Assistant Coding Skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, GitHub Copilot CLI, OpenClaw, Factory Droid, Trae, Google Antigravity)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_subagent_streaming	Subagent Streaming (Hidden Output Visibility)	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+nicedreamzapp_claude_code_local_concept_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_local_concept_122b_model	122B Model at 41 tok/s	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat_claude_esp_concept_subagents	Subagent Visibility	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+phiat_claude_esp_concept_go_lang	Go Programming Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+nicedreamzapp_claude_code_local_google_turboquant	Google TurboQuant	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+nicedreamzapp_claude_code_local_122b_model	122B Local Model (41 tok/s)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat_claude_esp_stream_hidden_output	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+m8e_graphify_knowledge_graph_skill	Knowledge Graph Claude Code Skill	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+m8e_graphify_community_detection	Community Detection in Knowledge Graph	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+m8e_graphify_god_nodes	God Nodes (High-Centrality Graph Nodes)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/m8e__graphify.md	
+safishamsi_graphify_multi_assistant_skill	Multi-AI Coding Assistant Skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, Copilot CLI, OpenClaw, Factory Droid, Trae, Google Antigravity)	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+safishamsi_graphify_graphrag	GraphRAG Knowledge Graph	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/safishamsi__graphify.md	
+concept_no_cloud_local_ai	No-Cloud Local AI Execution	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_tui_streaming	TUI Real-time Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_graphify_tool	Graphify Knowledge Graph Tool	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+user_nickarchuleta	Nick Archuleta (GitHub User)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_claude_code_local_inference	Claude Code Local Inference (No Cloud/API)	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+concept_claude_code_hidden_output	Claude Code Hidden Output Streaming	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_tui_terminal	TUI Terminal Interface	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+concept_subagent_visibility	Subagent Observability	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claudecodelocal_local_ai	Local AI on Apple Silicon	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudecodelocal_122b_model	122B Parameter Model	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudecodelocal_python	Python Language	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+claudeesp_go	Go Language	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+claudeesp_agents_topic	Agents Topic	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+shared_claude_code	Claude Code	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+shared_no_cloud	No Cloud / No API Fees	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/nicedreamzapp__claude-code-local.md	
+phiat_claude_esp_concept_stream_hidden_output	Stream Claude Code Hidden Output	4	📊 Agent HUDs &amp; Monitoring	openclaw/spellbook-homework/phiat__claude-esp.md	
+5bhuv4n35h_pentestmindmap	5bhuv4n35h/pentestmindmap	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/5bhuv4n35h__pentestmindmap.md	
+5bhuv4n35h_pentestmindmap_concept_pentest	Penetration Testing Mindmap	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/5bhuv4n35h__pentestmindmap.md	
+5bhuv4n35h_pentestmindmap_concept_oscp	OSCP Certification Prep	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/5bhuv4n35h__pentestmindmap.md	
+0xemmkty_quantmuse	0xemmkty/QuantMuse	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xemmkty__QuantMuse.md	
+0xemmkty_quantmuse_concept_quant_trading	AI-Powered Quantitative Trading System	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xemmkty__QuantMuse.md	
+0xemmkty_quantmuse_concept_risk_management	Advanced Risk Management	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xemmkty__QuantMuse.md	
+666ghj_mirofish	666ghj/MiroFish	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/666ghj__MiroFish.md	
+666ghj_mirofish_concept_swarm_intelligence	Swarm Intelligence Engine	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/666ghj__MiroFish.md	
+666ghj_mirofish_concept_knowledge_graph	Knowledge Graph (MiroFish)	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/666ghj__MiroFish.md	
+666ghj_mirofish_concept_multi_agent_simulation	Multi-Agent Simulation	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/666ghj__MiroFish.md	
+0xble_notion_cli	0xble/notion-cli	0	🖥️ This Mac	openclaw/spellbook-homework/0xble__notion-cli.md	
+0xble_notion_cli_concept_mcp	Model Context Protocol (MCP) CLI for Notion	0	🖥️ This Mac	openclaw/spellbook-homework/0xble__notion-cli.md	
+0xble_sentry_cli	0xble/sentry-cli	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xble__sentry-cli.md	
+0xble_sentry_cli_concept_sentry	Sentry CLI Utility	2	🔥 harnesses &amp; CLIs · xble · 2	openclaw/spellbook-homework/0xble__sentry-cli.md	
+awesomedata_awesome_public_datasets	awesomedata/awesome-public-datasets	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+awesomedata_awesome_public_datasets_concept_opendata	Open Datasets Catalog	7	📦 Datasets &amp; Data Tools	openclaw/spellbook-homework/awesomedata__awesome-public-datasets.md	
+concept_bug_bounty	Bug Bounty	10	💀 OSINT &amp; Security	openclaw/spellbook-homework/5bhuv4n35h__pentestmindmap.md	
+concept_financial_forecasting	Financial Forecasting	1	📂 living files on disk · claude · 1	openclaw/spellbook-homework/666ghj__MiroFish.md	
+concept_llms	Large Language Models (LLMs)	6	🎭 swarms &amp; teams	openclaw/spellbook-homework/666ghj__MiroFish.md	
+spellbook_local_workspace	★ Local workspace (disk)	3	📂 living files on disk · caveman · 3		
+local_fs__3f5b4674885f__cache	graphify-out/cache · 0 B	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/cache	
+local_fs__89ae521dcbc1__claude-memory	graphify-agents-staging/claude-memory · 40.1 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging/claude-memory	
+local_fs__dc3735cbc09b__earth-engine-app	earth-engine-app · 35.3 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/earth-engine-app	
+local_fs__b2167e4b1b65__earth-viewer	earth-viewer · 16.4 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/earth-viewer	
+local_fs__5fdc1c774f49__game-2d-clone	game-2d-clone · 6.7 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/game-2d-clone	
+local_fs__5af524e17d47__google-earth-clone	google-earth-clone · 331.8 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/google-earth-clone	
+local_fs__bac1d9baebdc__graphify-agents-staging	graphify-agents-staging · 264.1 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging	
+local_fs__7ae96acba5e6__graphify-nuclear-staging	graphify-nuclear-staging · 25.5 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-nuclear-staging	
+local_fs__e1385acb9157__graphify-out	graphify-out/graphify-out · 0 B	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/graphify-out	
+local_fs__6039c3ef5fcf__graphify-out	graphify-out · 2.9 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out	
+local_fs__e86d897a7b99__gsd-agents	graphify-agents-staging/gsd-agents · 311.2 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging/gsd-agents	
+local_fs__b9d5b5de797f__hermes	graphify-agents-staging/hermes · 130.1 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging/hermes	
+local_fs__d1ade6fa7e4d__my-pi-projects	my-pi-projects · 101.8 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/my-pi-projects	
+local_fs__638ace148464__obsidian-vault	graphify-agents-staging/obsidian-vault · 2.6 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging/obsidian-vault	
+local_fs__b27953bfa754__openbb-env	openbb-env · 622.9 MB	1	📂 living files on disk · claude · 1	/Users/coocoocachoo/openbb-env	
+local_fs__b0b27aaa359b__openclaw	graphify-agents-staging/openclaw · 131.0 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging/openclaw	
+local_fs__184b802a0402__polyterm	polyterm · 6.7 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/polyterm	
+local_fs__77e65a8b656d__spellbook_oracle	spellbook_oracle · 133.9 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/spellbook_oracle	
+local_fs__d6f771fd6d13__spellbook-oracle	graphify-agents-staging/spellbook-oracle · 2.3 MB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-agents-staging/spellbook-oracle	
+local_fs__06020217982f__cost_json	graphify-out/cost.json · 205 B	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/cost.json	
+local_fs__b55388e24750__github_stars_mirror_html	graphify-out/github_stars_mirror.html · 327.4 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/github_stars_mirror.html	
+local_fs__d4475e95ae9e__GRAPH_REPORT_md	graphify-out/GRAPH_REPORT.md · 25.3 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/GRAPH_REPORT.md	
+local_fs__3341e01dab23__graph_json	graphify-out/graph.json · 775.5 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/graph.json	
+local_fs__e295b13b6500__manifest_json	graphify-out/manifest.json · 5.4 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/manifest.json	
+local_fs__52e62d9f9cf4__MASTER_SPELLBOOK_md	spellbook_oracle/MASTER_SPELLBOOK.md · 98.5 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/spellbook_oracle/MASTER_SPELLBOOK.md	
+local_fs__971511574efa__OGLIST_github-stars-spellbook_md	OGLIST_github-stars-spellbook.md · 37.2 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/OGLIST_github-stars-spellbook.md	
+local_fs__15e17c57c898__ql_server_py	graphify-out/ql_server.py · 1.2 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/graphify-out/ql_server.py	
+local_fs__d5b2e667b1dc__README_md	spellbook_oracle/README.md · 6.9 KB	3	📂 living files on disk · caveman · 3	/Users/coocoocachoo/spellbook_oracle/README.md	
+spellbook_hub_osint	💀 OSINT & security	10	💀 OSINT &amp; Security		
+spellbook_hub_audio	🎵 Audio & voice	0	🖥️ This Mac		
+spellbook_hub_selfhosted	🏗️ Self-hosted & infra	8	🔥 harnesses &amp; CLIs · codex · 8		
+spellbook_hub_mobile_games	📱 Mobile & games	12	🌐 Misc Tools &amp; Wildcards · spellbook · 12		
+spellbook_hub_web_frontend	🌐 Web & frontend	13	🌐 Misc Tools &amp; Wildcards · spellbook · 13		
+spellbook_hub_datasets	📦 Datasets & data tools	7	📦 Datasets &amp; Data Tools		
+spellbook_hub_hardware	🔧 Hardware & physical	8	🔥 harnesses &amp; CLIs · codex · 8		
+spellbook_list_sun_0	💀 OSINT & Security	10	💀 OSINT &amp; Security		
+spellbook_list_sun_1	🔮 Trading — Prediction Markets & Backtesting	1	📂 living files on disk · claude · 1		
+spellbook_list_sun_2	🔮 Trading — Bots & Execution	1	📂 living files on disk · claude · 1		
+spellbook_list_sun_3	🔮 Trading — Financial Data & APIs	1	📂 living files on disk · claude · 1		
+spellbook_list_sun_4	✨ Agent Skills — Claude-Specific	1	📂 living files on disk · claude · 1		
+spellbook_list_sun_5	✨ Agent Skills — Specialized Domain	0	🖥️ This Mac		
+spellbook_list_sun_6	📊 Agent HUDs & Monitoring	4	📊 Agent HUDs &amp; Monitoring		
+spellbook_list_sun_7	🎭 swarms & teams	6	🎭 swarms &amp; teams		
+spellbook_list_sun_8	🔥 harnesses & CLIs	2	🔥 harnesses &amp; CLIs · xble · 2		
+spellbook_list_sun_9	✨ Agent Skills — General	3	📂 living files on disk · caveman · 3		
+spellbook_list_sun_10	🌊 memory & retrieval	9	🌊 memory &amp; retrieval		
+spellbook_list_sun_11	📦 Datasets & Data Tools	7	📦 Datasets &amp; Data Tools		
+spellbook_list_sun_12	🎵 Audio, Music & Voice	0	🖥️ This Mac		
+spellbook_list_sun_13	🍎 MLX & local	1	📂 living files on disk · claude · 1		
+spellbook_list_sun_14	🧠 Karpathy & Research Foundry	5	🧠 Karpathy &amp; Research Foundry		
+spellbook_list_sun_15	🎨 Visual — Image & Painting	11	🌐 Misc Tools &amp; Wildcards · deepfake · 11		
+spellbook_list_sun_16	🎨 Visual — 3D, Video & Worlds	2	🔥 harnesses &amp; CLIs · xble · 2		
+spellbook_list_sun_17	🎨 Visual — Creative Tools & Viz	14	🌐 Misc Tools &amp; Wildcards · spellbook · 14		
+spellbook_list_sun_18	🛠️ CLI — Steipete Ecosystem	2	🔥 harnesses &amp; CLIs · xble · 2		
+spellbook_list_sun_19	🛠️ CLI & Terminal Arsenal	15	🌐 Misc Tools &amp; Wildcards · spellbook · 15		
+spellbook_list_sun_20	🏗️ homelab	8	🔥 harnesses &amp; CLIs · codex · 8		
+spellbook_list_sun_21	📚 Awesome Lists & Learning	5	🧠 Karpathy &amp; Research Foundry		
+spellbook_list_sun_22	🤖 Hardware & Physical Computing	16	🌐 Misc Tools &amp; Wildcards · spellbook · 16		
+spellbook_list_sun_23	📱 Mobile & Portable Agents	0	🖥️ This Mac		
+spellbook_list_sun_24	💸 Career & Monetization	6	🎭 swarms &amp; teams		
+spellbook_list_sun_25	🎮 Games & Fun	17	🌐 Misc Tools &amp; Wildcards · spellbook · 17		
+spellbook_macos_apps	🖥️ This Mac · Applications	0	🖥️ This Mac		
+local_app__6e705765d27a__Ableton_Live_11_Trial_updated	🖥 .Ableton Live 11 Trial_updated.app · macOS app	0	🖥️ This Mac	/Applications/.Ableton Live 11 Trial_updated.app	
+local_app__8972278713a0__Amazon_Kindle	🖥 Amazon Kindle.app · macOS app	0	🖥️ This Mac	/Applications/Amazon Kindle.app	
+local_app__5c9291652538__Antigravity	🖥 Antigravity.app · macOS app	0	🖥️ This Mac	/Applications/Antigravity.app	
+local_app__1a9b0d367d62__App_Store	🖥 App Store.app · macOS app	0	🖥️ This Mac	/System/Applications/App Store.app	
+local_app__20c75a92986d__Apps	🖥 Apps.app · macOS app	0	🖥️ This Mac	/System/Applications/Apps.app	
+local_app__b7b5cba17426__Automator	🖥 Automator.app · macOS app	0	🖥️ This Mac	/System/Applications/Automator.app	
+local_app__9c95b82acc71__Books	🖥 Books.app · macOS app	0	🖥️ This Mac	/System/Applications/Books.app	
+local_app__b47e48fce0fe__Calculator	🖥 Calculator.app · macOS app	0	🖥️ This Mac	/System/Applications/Calculator.app	
+local_app__1c959cf6bacd__Calendar	🖥 Calendar.app · macOS app	0	🖥️ This Mac	/System/Applications/Calendar.app	
+local_app__953ca567c516__Chess	🖥 Chess.app · macOS app	0	🖥️ This Mac	/System/Applications/Chess.app	
+local_app__8fffe10de289__Claude_Code_URL_Handler	🖥 Claude Code URL Handler.app · macOS app	0	🖥️ This Mac	/Users/coocoocachoo/Applications/Claude Code URL Handler.app	
+local_app__be3c4840678a__Claude	🖥 Claude.app · macOS app	0	🖥️ This Mac	/Applications/Claude.app	
+local_app__d7a4264c7d3b__Clock	🖥 Clock.app · macOS app	0	🖥️ This Mac	/System/Applications/Clock.app	
+local_app__a7410e6e30f9__Contacts	🖥 Contacts.app · macOS app	0	🖥️ This Mac	/System/Applications/Contacts.app	
+local_app__a242645473d7__COROS_Training_Hub	🖥 COROS Training Hub.app · macOS app	0	🖥️ This Mac	/Users/coocoocachoo/Applications/COROS Training Hub.app	
+local_app__b303ba2bcbb3__Cursor	🖥 Cursor.app · macOS app	0	🖥️ This Mac	/Applications/Cursor.app	
+local_app__11421cca38a4__Dictionary	🖥 Dictionary.app · macOS app	0	🖥️ This Mac	/System/Applications/Dictionary.app	
+local_app__62497d56dd8f__Discord	🖥 Discord.app · macOS app	0	🖥️ This Mac	/Applications/Discord.app	
+local_app__cb7c14be8e52__FaceTime	🖥 FaceTime.app · macOS app	0	🖥️ This Mac	/System/Applications/FaceTime.app	
+local_app__0f6af8aaa863__FindMy	🖥 FindMy.app · macOS app	0	🖥️ This Mac	/System/Applications/FindMy.app	
+local_app__10cc2d0c99de__Font_Book	🖥 Font Book.app · macOS app	0	🖥️ This Mac	/System/Applications/Font Book.app	
+local_app__edcdb4732f51__Freeform	🖥 Freeform.app · macOS app	0	🖥️ This Mac	/System/Applications/Freeform.app	
+local_app__42e5fbd691ec__FTL_Faster_Than_Light	🖥 FTL Faster Than Light.app · macOS app	0	🖥️ This Mac	/Users/coocoocachoo/Applications/FTL Faster Than Light.app	
+local_app__e490075a0c2c__Games	🖥 Games.app · macOS app	0	🖥️ This Mac	/System/Applications/Games.app	
+local_app__9400b61372a1__Google_Chrome	🖥 Google Chrome.app · macOS app	0	🖥️ This Mac	/Applications/Google Chrome.app	
+local_app__4ccbcdda3336__Google_Docs	🖥 Google Docs.app · macOS app	0	🖥️ This Mac	/Applications/Google Docs.app	
+local_app__5c772f9449e3__Google_Drive	🖥 Google Drive.app · macOS app	0	🖥️ This Mac	/Applications/Google Drive.app	
+local_app__39cb05e5e768__Google_Sheets	🖥 Google Sheets.app · macOS app	0	🖥️ This Mac	/Applications/Google Sheets.app	
+local_app__0f32210ef985__Google_Slides	🖥 Google Slides.app · macOS app	0	🖥️ This Mac	/Applications/Google Slides.app	
+local_app__560481864d3c__Home	🖥 Home.app · macOS app	0	🖥️ This Mac	/System/Applications/Home.app	
+local_app__a76bcd72547c__Image_Capture	🖥 Image Capture.app · macOS app	0	🖥️ This Mac	/System/Applications/Image Capture.app	
+local_app__2e3cbfcde7ad__Image_Playground	🖥 Image Playground.app · macOS app	0	🖥️ This Mac	/System/Applications/Image Playground.app	
+local_app__84d1e690f637__iPhone_Mirroring	🖥 iPhone Mirroring.app · macOS app	0	🖥️ This Mac	/System/Applications/iPhone Mirroring.app	
+local_app__ef364d22dd02__Journal	🖥 Journal.app · macOS app	0	🖥️ This Mac	/System/Applications/Journal.app	
+local_app__7a177801911c__Mail	🖥 Mail.app · macOS app	0	🖥️ This Mac	/System/Applications/Mail.app	
+local_app__52ce72f682e4__Maps	🖥 Maps.app · macOS app	0	🖥️ This Mac	/System/Applications/Maps.app	
+local_app__e9fb228d36ad__Messages	🖥 Messages.app · macOS app	0	🖥️ This Mac	/System/Applications/Messages.app	
+local_app__869cc284cc2d__Mission_Control	🖥 Mission Control.app · macOS app	0	🖥️ This Mac	/System/Applications/Mission Control.app	
+local_app__0ed75b3b973d__Music	🖥 Music.app · macOS app	0	🖥️ This Mac	/System/Applications/Music.app	
+local_app__2028d7fdc48a__News	🖥 News.app · macOS app	0	🖥️ This Mac	/System/Applications/News.app	
+local_app__0734a4fea095__No_Man_s_Sky	🖥 No Man's Sky.app · macOS app	0	🖥️ This Mac	/Users/coocoocachoo/Applications/No Man's Sky.app	
+local_app__462023b56cec__Noir	🖥 Noir.app · macOS app	0	🖥️ This Mac	/Applications/Noir.app	
+local_app__160a0dfb3f1e__Notes	🖥 Notes.app · macOS app	0	🖥️ This Mac	/System/Applications/Notes.app	
+local_app__76ab09d531ad__Obsidian	🖥 Obsidian.app · macOS app	0	🖥️ This Mac	/Applications/Obsidian.app	
+local_app__83c93f0a0bc2__Ollama	🖥 Ollama.app · macOS app	0	🖥️ This Mac	/Applications/Ollama.app	
+local_app__961604eece12__Pages	🖥 Pages.app · macOS app	0	🖥️ This Mac	/Applications/Pages.app	
+local_app__5bb29621758d__Passwords	🖥 Passwords.app · macOS app	0	🖥️ This Mac	/System/Applications/Passwords.app	
+local_app__3b89fa4fc350__Phone	🖥 Phone.app · macOS app	0	🖥️ This Mac	/System/Applications/Phone.app	
+local_app__b60feadbb744__Photo_Booth	🖥 Photo Booth.app · macOS app	0	🖥️ This Mac	/System/Applications/Photo Booth.app	
+local_app__eaf956b606a1__Photos	🖥 Photos.app · macOS app	0	🖥️ This Mac	/System/Applications/Photos.app	
+local_app__2a05efc97bac__Podcasts	🖥 Podcasts.app · macOS app	0	🖥️ This Mac	/System/Applications/Podcasts.app	
+local_app__32ad972fe1c0__Preview	🖥 Preview.app · macOS app	0	🖥️ This Mac	/System/Applications/Preview.app	
+local_app__9a7395ebd623__QuickTime_Player	🖥 QuickTime Player.app · macOS app	0	🖥️ This Mac	/System/Applications/QuickTime Player.app	
+local_app__3476cf743766__Rectangle	🖥 Rectangle.app · macOS app	0	🖥️ This Mac	/Applications/Rectangle.app	
+local_app__f22b1d0f6085__Reminders	🖥 Reminders.app · macOS app	0	🖥️ This Mac	/System/Applications/Reminders.app	
+local_app__fac361f18128__Safari	🖥 Safari.app · macOS app	0	🖥️ This Mac	/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app	
+local_app__67951fe4e19f__Shazam	🖥 Shazam.app · macOS app	0	🖥️ This Mac	/Applications/Shazam.app	
+local_app__acdf1e45ad06__Shortcuts	🖥 Shortcuts.app · macOS app	0	🖥️ This Mac	/System/Applications/Shortcuts.app	
+local_app__4879f4fec3aa__Siri	🖥 Siri.app · macOS app	0	🖥️ This Mac	/System/Applications/Siri.app	
+local_app__04498e434bfa__Spotify	🖥 Spotify.app · macOS app	0	🖥️ This Mac	/Applications/Spotify.app	
+local_app__8c558bc8545a__Stickies	🖥 Stickies.app · macOS app	0	🖥️ This Mac	/System/Applications/Stickies.app	
+local_app__55d803cc4f38__Stocks	🖥 Stocks.app · macOS app	0	🖥️ This Mac	/System/Applications/Stocks.app	
+local_app__a5606d144267__System_Settings	🖥 System Settings.app · macOS app	0	🖥️ This Mac	/System/Applications/System Settings.app	
+local_app__cca1f0cac46f__Telegram	🖥 Telegram.app · macOS app	0	🖥️ This Mac	/Applications/Telegram.app	
+local_app__9c14713a1623__TextEdit	🖥 TextEdit.app · macOS app	0	🖥️ This Mac	/System/Applications/TextEdit.app	
+local_app__6b114c17fdff__Time_Machine	🖥 Time Machine.app · macOS app	0	🖥️ This Mac	/System/Applications/Time Machine.app	
+local_app__4a9e486f9168__Tips	🖥 Tips.app · macOS app	0	🖥️ This Mac	/System/Applications/Tips.app	
+local_app__39be80dc66f4__TV	🖥 TV.app · macOS app	0	🖥️ This Mac	/System/Applications/TV.app	
+local_app__6ca3e116cc73__VoiceMemos	🖥 VoiceMemos.app · macOS app	0	🖥️ This Mac	/System/Applications/VoiceMemos.app	
+local_app__ccaf555d294a__Wake_Up_Time	🖥 Wake Up Time.app · macOS app	0	🖥️ This Mac	/Applications/Wake Up Time.app	
+local_app__22d4e5403c9c__Weather	🖥 Weather.app · macOS app	0	🖥️ This Mac	/System/Applications/Weather.app	
+local_app__ad5870a63e80__WhatsApp	🖥 WhatsApp.app · macOS app	0	🖥️ This Mac	/Applications/WhatsApp.app	
+concept_hermes_agent	Hermes Agent	3	📂 living files on disk · caveman · 3	openclaw/spellbook-homework/NousResearch__hermes-agent.md	

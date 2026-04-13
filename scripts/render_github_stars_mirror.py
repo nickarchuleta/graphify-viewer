@@ -96,6 +96,7 @@ def main() -> None:
 <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="./readme_render.js"></script>
+<script src="./stars_live_graph.js"></script>
 <style>
   * {{ box-sizing: border-box; margin: 0; }}
   body {{ background: #0f0f1a; color: #e0e0e0; font-family: system-ui, sans-serif; height: 100vh; display: flex; flex-direction: column; }}
@@ -106,6 +107,18 @@ def main() -> None:
   #panel {{ width: min(400px, 42vw); border-left: 1px solid #2a2a4e; padding: 12px 14px; font-size: 12px; overflow: auto; min-width: 0; }}
   body.embed #panel {{ display: none; }}
   body.embed .wrap {{ flex: 1; }}
+  body.embed .stars-dash {{
+    position: fixed; top: 8px; left: 8px; z-index: 30; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    font-size: 11px; background: rgba(15, 15, 26, 0.94); border: 1px solid #2a2a4e; padding: 6px 10px; border-radius: 8px;
+    max-width: min(380px, 94vw); color: #ccc;
+  }}
+  body:not(.embed) .stars-dash {{ display: none; }}
+  .stars-dash label {{ display: flex; align-items: center; gap: 6px; cursor: pointer; }}
+  .stars-dash button {{
+    margin: 0; padding: 4px 8px; border-radius: 6px; border: 1px solid #2a2a4e; background: #1a1a2e; color: #e0e0e0;
+    cursor: pointer; font-size: 10px;
+  }}
+  .stars-dash #stars-link-st {{ font-size: 10px; color: #888; min-width: 4em; }}
   #panel h2 {{ font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 8px; }}
   #panel a {{ color: #60a5fa; word-break: break-all; }}
   .wrap {{ display: flex; flex: 1; min-height: 0; }}
@@ -122,6 +135,12 @@ def main() -> None:
 </header>
 <div class="wrap">
   <div id="graph"></div>
+  <div id="stars-dash" class="stars-dash" aria-label="Draw custom links">
+    <label><input type="checkbox" id="stars-link-mode"/> Link mode</label>
+    <span id="stars-link-st">Off</span>
+    <button type="button" id="stars-link-can">Cancel</button>
+    <button type="button" id="stars-link-clr">Clear my links</button>
+  </div>
   <div id="panel">
     <h2>Selected</h2>
     <div id="info">Click a repo node…</div>
@@ -131,34 +150,201 @@ def main() -> None:
 <script>
 const EMBED = new URLSearchParams(location.search).get('embed') === '1';
 if (EMBED) document.body.classList.add('embed');
-const RAW_NODES = {json.dumps(nodes)};
-const RAW_EDGES = {json.dumps(edges)};
-const nodesDS = new vis.DataSet(RAW_NODES.map(n => ({{
+const STARS_GITHUB_USER = 'nickarchuleta';
+const FALLBACK_NODES = {json.dumps(nodes)};
+const FALLBACK_EDGES = {json.dumps(edges)};
+function starsRawList() {{
+  return window.STARS_RAW_NODES_REF || FALLBACK_NODES;
+}}
+const nodesDS = new vis.DataSet(FALLBACK_NODES.map(n => ({{
   id: n.id, label: n.label, color: n.color, size: n.size, font: n.font, title: n.title,
   _url: n.url || '', _full_name: n.full_name || ''
 }})));
-const edgesDS = new vis.DataSet(RAW_EDGES.map((e, i) => ({{
+const edgesDS = new vis.DataSet(FALLBACK_EDGES.map((e, i) => ({{
   id: i, from: e.from, to: e.to,
   color: {{ opacity: 0.25 }},
   width: 1,
 }})));
+const STARS_LINKS_KEY = 'starsCustomLinks_v1';
+function starsLoadLinks() {{
+  try {{ return JSON.parse(localStorage.getItem(STARS_LINKS_KEY) || '[]'); }} catch (e) {{ return []; }}
+}}
+function starsSaveLinks(rows) {{
+  try {{ localStorage.setItem(STARS_LINKS_KEY, JSON.stringify(rows)); }} catch (e) {{}}
+}}
+function starsHydrateLinks() {{
+  const seen = new Set(edgesDS.getIds());
+  starsLoadLinks().forEach(function (r) {{
+    if (!r || !r.id || !r.from || !r.to) return;
+    if (seen.has(r.id)) return;
+    if (!nodesDS.get(r.from) || !nodesDS.get(r.to)) return;
+    edgesDS.add({{
+      id: r.id, from: r.from, to: r.to,
+      dashes: [5, 3], width: 2.2,
+      color: {{ color: '#a78bfa', opacity: 0.95 }},
+      arrows: {{ to: {{ enabled: true, scaleFactor: 0.5 }} }},
+      title: 'Your drawn link',
+    }});
+    seen.add(r.id);
+  }});
+}}
+starsHydrateLinks();
+let starsLinkDraft = null;
+function starsLinkOn() {{
+  const el = document.getElementById('stars-link-mode');
+  return !!(el && el.checked);
+}}
+function starsLinkSet(msg) {{
+  const s = document.getElementById('stars-link-st');
+  if (s) s.textContent = msg;
+}}
+function starsTryLinkClick(nodeId) {{
+  if (!EMBED || !starsLinkOn()) return false;
+  if (!nodesDS.get(nodeId)) return false;
+  if (starsLinkDraft == null) {{
+    starsLinkDraft = nodeId;
+    starsLinkSet('Pick 2nd node…');
+    network.selectNodes([nodeId]);
+    return true;
+  }}
+  if (starsLinkDraft === nodeId) {{
+    starsLinkSet('Different node');
+    return true;
+  }}
+  const id = 'stars_l_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+  const rows = starsLoadLinks();
+  rows.push({{ id: id, from: starsLinkDraft, to: nodeId }});
+  starsSaveLinks(rows);
+  edgesDS.add({{
+    id: id, from: starsLinkDraft, to: nodeId,
+    dashes: [5, 3], width: 2.2,
+    color: {{ color: '#a78bfa', opacity: 0.95 }},
+    arrows: {{ to: {{ enabled: true, scaleFactor: 0.5 }} }},
+    title: 'Your drawn link',
+  }});
+  starsLinkDraft = null;
+  starsLinkSet('Added');
+  network.selectNodes([nodeId]);
+  if (window.parent !== window) {{
+    const nn = nodesDS.get(nodeId);
+    const u = nn._url;
+    const fn = nn._full_name || '';
+    window.parent.postMessage({{ type: 'stars-node', fullName: fn, url: u || '', label: nn.label || nodeId, id: nodeId }}, '*');
+  }}
+  return true;
+}}
+(function starsDashBind() {{
+  const lm = document.getElementById('stars-link-mode');
+  if (lm) lm.addEventListener('change', function () {{
+    starsLinkDraft = null;
+    starsLinkSet(lm.checked ? 'Pick first…' : 'Off');
+  }});
+  const c = document.getElementById('stars-link-can');
+  if (c) c.addEventListener('click', function () {{
+    starsLinkDraft = null;
+    starsLinkSet(starsLinkOn() ? 'Pick first…' : 'Off');
+  }});
+  const x = document.getElementById('stars-link-clr');
+  if (x) x.addEventListener('click', function () {{
+    starsSaveLinks([]);
+    edgesDS.getIds().filter(function (id) {{ return String(id).indexOf('stars_l_') === 0; }})
+      .forEach(function (id) {{ try {{ edgesDS.remove(id); }} catch (e) {{}} }});
+    starsLinkDraft = null;
+    starsLinkSet(starsLinkOn() ? 'Pick first…' : 'Off');
+  }});
+}})();
 const container = document.getElementById('graph');
 const network = new vis.Network(container, {{ nodes: nodesDS, edges: edgesDS }}, {{
   physics: {{
     enabled: true,
     solver: 'forceAtlas2Based',
-    forceAtlas2Based: {{ gravitationalConstant: -80, springLength: 140, springConstant: 0.06, damping: 0.45 }},
-    stabilization: {{ iterations: 120, fit: true }},
+    forceAtlas2Based: {{
+      gravitationalConstant: -88,
+      centralGravity: 0.018,
+      springLength: 88,
+      springConstant: 0.065,
+      damping: 0.52,
+      avoidOverlap: 0.92,
+    }},
+    stabilization: {{ iterations: 420, fit: true, updateInterval: 25 }},
   }},
   interaction: {{
-    hover: true, tooltipDelay: 80, hideEdgesOnDrag: true, hideEdgesOnZoom: true,
+    hover: true, tooltipDelay: 90, hideEdgesOnDrag: true, hideEdgesOnZoom: true,
+    navigationButtons: false,
     zoomSpeed: 0.32, keyboard: false,
   }},
-  nodes: {{ shape: 'dot', borderWidth: 1.2 }},
-  edges: {{ smooth: {{ type: 'continuous' }} }},
+  nodes: {{ shape: 'dot', borderWidth: 1.5 }},
+  edges: {{ smooth: {{ type: 'continuous', roundness: 0.2 }}, selectionWidth: 3 }},
 }});
+function spellbookStarsFit() {{
+  try {{
+    network.fit({{ padding: 72, animation: {{ duration: 420, easingFunction: 'easeInOutQuad' }} }});
+  }} catch (e) {{}}
+}}
+function spellbookStarsRefit() {{
+  try {{ network.redraw(); }} catch (e) {{}}
+  spellbookStarsFit();
+}}
+function spellbookStarsMaybeFitWhenSized() {{
+  const w = container.clientWidth;
+  const h = container.clientHeight;
+  if (w > 48 && h > 48) spellbookStarsRefit();
+}}
+function spellbookStarsReshuffle() {{
+  network.setOptions({{ physics: {{ enabled: true }} }});
+  network.startSimulation();
+  window.clearTimeout(window.__starsShuffleT);
+  window.__starsShuffleT = window.setTimeout(() => {{
+    try {{ network.stopSimulation(); }} catch (e) {{}}
+    network.setOptions({{ physics: {{ enabled: false }} }});
+    setTimeout(spellbookStarsFit, 40);
+  }}, 5000);
+}}
 network.once('stabilizationIterationsDone', () => {{
   network.setOptions({{ physics: {{ enabled: false }} }});
+  if (EMBED) {{
+    setTimeout(spellbookStarsMaybeFitWhenSized, 50);
+    let tries = 0;
+    const iv = setInterval(() => {{
+      tries += 1;
+      spellbookStarsMaybeFitWhenSized();
+      if ((container.clientWidth > 48 && container.clientHeight > 48) || tries > 45) clearInterval(iv);
+    }}, 120);
+  }} else {{
+    setTimeout(spellbookStarsFit, 50);
+  }}
+}});
+if (EMBED) {{
+  try {{
+    new ResizeObserver(() => spellbookStarsMaybeFitWhenSized()).observe(container);
+  }} catch (e) {{}}
+}}
+window.addEventListener('message', (ev) => {{
+  const d = ev.data;
+  if (!d || typeof d !== 'object') return;
+  if (d.type === 'stars-refit') {{
+    setTimeout(spellbookStarsRefit, 0);
+    setTimeout(spellbookStarsRefit, 80);
+    return;
+  }}
+  if (d.type === 'stars-shuffle') spellbookStarsReshuffle();
+  if (d.type === 'stars-community-apply' && Array.isArray(d.keywords)) {{
+    const kws = d.keywords.map((k) => String(k).toLowerCase().trim()).filter(Boolean);
+    const updates = starsRawList().map((n) => {{
+      if (n.id === '_github_stars_hub') return {{ id: n.id, hidden: false }};
+      const blob = (
+        String(n.full_name || '') + ' ' + String(n.label || '') + ' ' + String(n.title || '')
+      ).toLowerCase();
+      const hit = kws.some((kw) => blob.indexOf(kw) !== -1);
+      return {{ id: n.id, hidden: !hit }};
+    }});
+    nodesDS.update(updates);
+    setTimeout(spellbookStarsFit, 60);
+  }}
+  if (d.type === 'stars-community-clear') {{
+    nodesDS.update(starsRawList().map((n) => ({{ id: n.id, hidden: false }})));
+    setTimeout(spellbookStarsFit, 60);
+  }}
 }});
 async function fetchReadmeMd(owner, repo) {{
   const tryUrls = [
@@ -178,6 +364,7 @@ async function fetchReadmeMd(owner, repo) {{
   return null;
 }}
 network.on('click', async (p) => {{
+  if (p.nodes.length && EMBED && starsTryLinkClick(p.nodes[0])) return;
   if (!p.nodes.length) return;
   const id = p.nodes[0];
   const n = nodesDS.get(id);
@@ -211,6 +398,49 @@ network.on('click', async (p) => {{
     }}
   }}
 }});
+
+function starsMapVisNodes(raw) {{
+  return raw.map(n => ({{
+    id: n.id, label: n.label, color: n.color, size: n.size, font: n.font, title: n.title,
+    _url: n.url || '', _full_name: n.full_name || ''
+  }}));
+}}
+function starsMapVisEdges(raw) {{
+  return raw.map((e, i) => ({{
+    id: i, from: e.from, to: e.to,
+    color: {{ opacity: 0.25 }},
+    width: 1,
+  }}));
+}}
+
+(async function starsLiveRefresh() {{
+  if (typeof StarsLive === 'undefined') return;
+  try {{
+    const api = await StarsLive.fetchAllStarred(STARS_GITHUB_USER);
+    if (!api || api.length === 0) return;
+    const b = await StarsLive.buildNodesEdges(api);
+    window.STARS_RAW_NODES_REF = b.nodes;
+    nodesDS.clear();
+    edgesDS.clear();
+    nodesDS.add(starsMapVisNodes(b.nodes));
+    edgesDS.add(starsMapVisEdges(b.edges));
+    starsHydrateLinks();
+    network.setData({{ nodes: nodesDS, edges: edgesDS }});
+    network.setOptions({{ physics: {{ enabled: true }} }});
+    network.startSimulation();
+    network.once('stabilizationIterationsDone', () => {{
+      network.setOptions({{ physics: {{ enabled: false }} }});
+      setTimeout(spellbookStarsFit, 50);
+      if (EMBED) setTimeout(spellbookStarsMaybeFitWhenSized, 80);
+    }});
+    const st = document.getElementById('stars-link-st');
+    if (st && !starsLinkOn()) st.textContent = 'Live · ' + b.nodes.length + ' nodes';
+  }} catch (err) {{
+    console.warn('[stars] Live refresh skipped:', err);
+    const st = document.getElementById('stars-link-st');
+    if (st && !starsLinkOn()) st.textContent = 'Snapshot (API limit?)';
+  }}
+}})();
 </script>
 </body>
 </html>

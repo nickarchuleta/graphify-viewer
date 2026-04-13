@@ -1,0 +1,53 @@
+# Stars Override Curation
+
+- repos scanned: **596**
+- ambiguous scored repos: **111**
+- existing overrides: **20**
+- new overrides added: **44**
+- total overrides now: **64**
+
+## Added (this run)
+- `agenticnotetaking/arscontexta` -> `agents`
+- `ai-agents-2030/awesome-deep-research-agent` -> `agents`
+- `alibaba/page-agent` -> `agents`
+- `awesome-ai-tools/curated-ai-agents` -> `agents`
+- `awesome-ai-tools/curated-rag-tools` -> `graphs`
+- `blaizzy/mlx-vlm` -> `mac`
+- `builderio/agent-native` -> `agents`
+- `buildermethods/agent-os` -> `agents`
+- `bytedance/trae-agent` -> `agents`
+- `caramaschihg/awesome-ai-agents-2026` -> `agents`
+- `chadi0x/thebigbrother` -> `sec`
+- `cloudflare/agents` -> `agents`
+- `coleam00/ai-agents-masterclass` -> `agents`
+- `cporter202/agentic-ai-apis` -> `agents`
+- `cporter202/agentic-ai-starters` -> `agents`
+- `enidpinxit/awesome-openclaw-agents` -> `agents`
+- `fastly/fastly-agent-toolkit` -> `agents`
+- `final-run/finalrun-agent` -> `agents`
+- `frangelbarrera/osint-bible` -> `sec`
+- `gajesh2007/ai-trading-agent` -> `agents`
+- `hkuds/lightrag` -> `graphs`
+- `huggingface/datasets` -> `data`
+- `humanlayer/12-factor-agents` -> `agents`
+- `jaechang-hits/sciagent-skills` -> `agents`
+- `karlyndiary/real-estate-price-prediction` -> `data`
+- `karpathy/micrograd` -> `data`
+- `langchain-ai/deepagents` -> `agents`
+- `lightpanda-io/browser` -> `browser`
+- `memvid/memvid` -> `graphs`
+- `msitarzewski/agency-agents` -> `agents`
+- `msitarzewski/agent-zero` -> `agents`
+- `nauvalazhar/build-your-own-ai-coding-agent` -> `agents`
+- `nousresearch/hermes-agent-self-evolution` -> `agents`
+- `ofershap/agents-control-tower` -> `agents`
+- `openhands/software-agent-sdk` -> `agents`
+- `peth-eth/agent-ready-by-sero` -> `agents`
+- `predicatesystems/account-payable-multi-ai-agent-demo` -> `agents`
+- `sharpai/swiftlm` -> `mac`
+- `sherlock-project/sherlock` -> `sec`
+- `smicallef/spiderfoot` -> `sec`
+- `snooppr/snoop` -> `sec`
+- `tauricresearch/tradingagents` -> `agents`
+- `voltagent/awesome-design-md` -> `agents`
+- `y-research-sbu/quantagent` -> `agents`

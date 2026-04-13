@@ -8,7 +8,8 @@
   <script src="./readme_render.js"></script>
   <style>
     :root {
-      --bg: #0f0f1a; --bg2: #1a1a2e; --border: #2a2a4e; --text: #e0e0e0; --muted: #888; --accent: #2563eb;
+      --bg: #0f0f1a; --bg2: #1a1a2e; --border: #2a2a4e; --text: #e0e0e0; --text2: #ccc; --muted: #888; --accent: #2563eb;
+      --hover: rgba(255, 255, 255, 0.06);
       --detail-open: min(520px, 46vw);
     }
     * { box-sizing: border-box; margin: 0; }
@@ -22,7 +23,9 @@
       align-items: stretch;
       min-height: 0;
       background: var(--bg2);
-      border-right: 1px solid var(--border);
+      border-right: none;
+      position: relative;
+      overflow: visible;
     }
     .view-dock-inner {
       overflow: hidden;
@@ -33,12 +36,14 @@
       width: min(152px, 22vw);
       min-width: min(152px, 22vw);
       opacity: 1;
+      border-right: 1px solid var(--border);
     }
     .view-dock.collapsed .view-dock-inner {
       width: 0;
       min-width: 0;
       opacity: 0;
       pointer-events: none;
+      border-right: none;
     }
     .tabs {
       display: flex;
@@ -48,14 +53,64 @@
       height: 100%;
       border-right: none;
     }
+    .dock-tools {
+      margin-top: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 0;
+    }
+    .dock-tools .title { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .dock-tools label { font-size: 10px; color: var(--text2); display: flex; align-items: center; gap: 5px; }
+    .dock-tools .row { display: flex; gap: 6px; }
+    .dock-tools .row button {
+      flex: 1;
+      padding: 4px 5px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #1a1a2e;
+      color: var(--text2);
+      font-size: 9px;
+      cursor: pointer;
+    }
+    .dock-tools .status { font-size: 9px; color: var(--muted); min-height: 1.2em; }
+    .dock-groups {
+      max-height: 34vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px;
+      background: rgba(15,15,26,0.55);
+      font-size: 9px;
+    }
+    .dock-group-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text2);
+      padding: 3px 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 9px;
+    }
+    .dock-group-item:hover { background: var(--hover); }
+    .dock-group-item .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dock-group-item .nm { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .dock-group-item .ct { color: var(--muted); }
     .tabs button {
       width: 100%;
-      padding: 10px 8px;
+      padding: 8px 8px;
       border-radius: 8px;
       border: 1px solid var(--border);
       background: #2a2a4e;
       color: var(--text);
-      font-size: 12px;
+      font-size: 11px;
       cursor: pointer;
       text-align: center;
       line-height: 1.25;
@@ -67,19 +122,21 @@
       font-weight: 600;
     }
     .dock-toggle {
-      width: 28px;
-      flex-shrink: 0;
-      align-self: stretch;
-      border: none;
+      width: 20px;
+      height: 44px;
+      border: 1px solid var(--border);
       background: var(--bg2);
       color: var(--muted);
       cursor: pointer;
       font-size: 16px;
       line-height: 1;
-      border-right: 1px solid var(--border);
-      transition: background 0.15s;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .dock-toggle:hover { background: #252540; color: var(--text); }
+    .dock-toggle:hover { background: #252540; color: var(--text); border-color: #3a3a5e; }
     /* Right hideaway: spellbook + README (mirror of left dock) */
     .detail-dock {
       flex-shrink: 0;
@@ -112,9 +169,25 @@
       opacity: 0;
       pointer-events: none;
     }
-    .detail-dock .dock-toggle {
-      border-right: 1px solid var(--border);
+    #dock-toggle {
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      z-index: 40;
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      margin-right: 0;
+    }
+    #detail-toggle {
       border-left: none;
+      border-radius: 0 6px 6px 0;
+      margin-left: 0;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      z-index: 40;
     }
     .graph-slot { flex: 1; min-width: 0; position: relative; background: var(--bg); }
     .graph-slot iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
@@ -163,21 +236,78 @@
     #star-readme table { display: block; overflow-x: auto; max-width: 100%; }
     #star-readme ul, #star-readme ol { padding-left: 1.2em; margin: 0.35em 0; }
     .loading { color: var(--muted); }
+    .star-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr min(220px, 34vw);
+      gap: 0;
+      min-height: 0;
+      align-items: stretch;
+    }
+    .star-detail-main { min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+    .star-communities {
+      border-left: 1px solid var(--border);
+      padding: 10px 12px;
+      overflow-y: auto;
+      font-size: 11px;
+      color: var(--text2);
+      min-height: 0;
+    }
+    .star-communities h2 { margin-top: 0; }
+    .star-comm-hint { color: var(--muted); font-size: 10px; line-height: 1.35; margin-bottom: 8px; }
+    .star-communities input, .star-communities textarea {
+      width: 100%; margin: 4px 0; padding: 5px 7px; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 11px;
+    }
+    .star-communities textarea { min-height: 52px; resize: vertical; font-family: inherit; }
+    .star-communities button {
+      margin: 4px 4px 4px 0; padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--bg2); color: var(--text2); cursor: pointer; font-size: 11px;
+    }
+    .star-communities button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .star-comm-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 6px;
+      padding: 5px 0; border-bottom: 1px solid var(--border); cursor: pointer; font-size: 11px;
+    }
+    .star-comm-row:hover { background: var(--hover); margin: 0 -8px; padding-left: 8px; padding-right: 8px; border-radius: 4px; }
+    .star-comm-row .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .star-comm-row small { color: var(--muted); display: block; font-size: 9px; margin-top: 2px; word-break: break-word; }
+    .layout.spell-mode #detail-dock { display: none !important; }
+    .star-filter-bar {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 12px;
+      padding: 8px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 11px;
+    }
+    .star-filter-bar label { color: var(--muted); margin-right: 4px; }
+    .star-filter-bar input { flex: 1; min-width: 140px; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg2); color: var(--text); font-size: 12px; }
+    .star-filter-bar button { padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg2); color: var(--text2); cursor: pointer; font-size: 11px; }
+    .star-filter-bar button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
   </style>
 </head>
 <body>
-  <div class="layout">
+  <div class="layout spell-mode">
     <div id="view-dock" class="view-dock expanded" aria-label="Graph view switcher">
       <div class="view-dock-inner">
         <div class="tabs" role="tablist" aria-label="Graph view">
           <button type="button" id="tab-spell" role="tab" aria-selected="true" aria-controls="panel">Spellbook map</button>
           <button type="button" id="tab-stars" role="tab" aria-selected="false" aria-controls="panel">Stars nebula</button>
+          <button type="button" id="unified-reload-iframes" title="Reload both graphs (after refresh_graphs_from_github.sh or disk edits)">Reload graphs</button>
+          <button type="button" id="unified-export-links" title="Export custom links from both graphs">Export links</button>
+          <div id="dock-tools" class="dock-tools">
+            <div class="title">Link mode</div>
+            <label><input type="checkbox" id="dock-link-mode"/> Link mode</label>
+            <div id="dock-link-status" class="status">Off</div>
+            <div class="row">
+              <button type="button" id="dock-link-cancel">Cancel</button>
+              <button type="button" id="dock-link-clear">Clear</button>
+            </div>
+            <div class="title">Communities</div>
+            <div id="dock-groups" class="dock-groups"></div>
+          </div>
         </div>
       </div>
       <button type="button" id="dock-toggle" class="dock-toggle" aria-expanded="true" title="Hide view switcher">‹</button>
     </div>
     <div class="graph-slot">
-      <iframe id="if-spell" class="on" title="Spellbook graph" src="./graph.html"></iframe>
+      <iframe id="if-spell" class="on" title="Spellbook graph" src="./graph.html?embed=1"></iframe>
       <iframe id="if-stars" title="Stars nebula" src="./github_stars_mirror.html?embed=1"></iframe>
     </div>
     <div id="detail-dock" class="detail-dock expanded" aria-label="Details panel">
@@ -186,12 +316,25 @@
         <div class="panel" id="panel">
           <div id="spell-pane">
             <h2>Spellbook</h2>
-            <p id="spell-hint">Search, node info, and community toggles live in the graph. Use the <strong>left</strong> strip for the stars nebula. Use <strong>›</strong> here to hide this column and give the graph more room.</p>
+            <p id="spell-hint">Use the graph sidebar for search and communities. <strong>Stars nebula</strong> pulls your public starred repos from GitHub on every refresh (optional: set <code>localStorage SPELLBOOK_GH_TOKEN</code> for higher rate limits). To refresh the Spellbook map files on disk, run <code>refresh_graphs_from_github.sh</code> in this folder.</p>
+            <div id="rebuild-health" style="margin-top:10px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:11px;color:var(--text2)">
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Rebuild health</div>
+              <div id="health-spell">Spellbook: waiting…</div>
+              <div id="health-stars">Stars: waiting…</div>
+            </div>
           </div>
           <div id="star-detail">
-            <h2>Selected repo</h2>
-            <div id="star-head" class="loading">Click a colored node in the nebula…</div>
-            <div id="star-readme"></div>
+            <div class="star-detail-main">
+              <h2>Selected repo</h2>
+              <div class="star-filter-bar" aria-label="Highlight repos in nebula">
+                <label for="star-highlight-kws">Highlight</label>
+                <input type="text" id="star-highlight-kws" placeholder="Keywords: openclaw, mcp, karpathy…" autocomplete="off"/>
+                <button type="button" class="primary" id="star-highlight-go">Apply</button>
+                <button type="button" id="star-highlight-clear">Clear</button>
+              </div>
+              <div id="star-head" class="loading">Click a colored node in the nebula…</div>
+              <div id="star-readme"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -199,8 +342,24 @@
   </div>
   <script>
 (function () {
+  function escapeHtml(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
   const DOCK_KEY = 'graphUnifiedDockExpanded';
   const DETAIL_KEY = 'graphUnifiedDetailExpanded';
+  const TAB_KEY = 'graphUnifiedActiveTab';
+  const STARS_DETAIL_KEY = 'graphUnifiedStarsDetailExpanded';
+  const STAR_HIGHLIGHT_KEY = 'spellbookStarsLastHighlight';
+  const SPELL_LINKS_KEY = 'spellbookCustomLinks_v1';
+  const STARS_LINKS_KEY = 'starsCustomLinks_v1';
+  const healthSpell = document.getElementById('health-spell');
+  const healthStars = document.getElementById('health-stars');
+  const __readmeCache = new Map();
+  let __readmeReqSeq = 0;
+  const layoutRoot = document.querySelector('.layout');
   const ifSpell = document.getElementById('if-spell');
   const ifStars = document.getElementById('if-stars');
   const tabSpell = document.getElementById('tab-spell');
@@ -209,10 +368,70 @@
   const starDetail = document.getElementById('star-detail');
   const starHead = document.getElementById('star-head');
   const starReadme = document.getElementById('star-readme');
+  const starHighlightKws = document.getElementById('star-highlight-kws');
   const viewDock = document.getElementById('view-dock');
   const dockToggle = document.getElementById('dock-toggle');
   const detailDock = document.getElementById('detail-dock');
   const detailToggle = document.getElementById('detail-toggle');
+  const dockLinkMode = document.getElementById('dock-link-mode');
+  const dockLinkStatus = document.getElementById('dock-link-status');
+  const dockGroups = document.getElementById('dock-groups');
+
+  function postStarsShuffle() {
+    // Disabled: avoid heavy lag / magnetic jump-back on large star graphs.
+  }
+
+  function postStarsRefit() {
+    try {
+      if (ifStars.contentWindow) ifStars.contentWindow.postMessage({ type: 'stars-refit' }, '*');
+    } catch (e) {}
+  }
+
+  function setHealthLine(el, text) {
+    if (el) el.textContent = text;
+  }
+  function activeFrame() {
+    return tabStars.getAttribute('aria-selected') === 'true' ? ifStars : ifSpell;
+  }
+  function postToActive(type, extra) {
+    try {
+      var frm = activeFrame();
+      if (frm && frm.contentWindow) frm.contentWindow.postMessage(Object.assign({ type: type }, extra || {}), '*');
+    } catch (e) {}
+  }
+  function renderDockGroups(rows, kind) {
+    if (!dockGroups) return;
+    dockGroups.innerHTML = '';
+    if (!rows || !rows.length) {
+      dockGroups.innerHTML = '<div style="color:var(--muted)">No items</div>';
+      return;
+    }
+    rows.forEach(function (r) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'dock-group-item';
+      b.innerHTML = '<span class="dot" style="background:' + (r.color || '#666') + '"></span>' +
+        '<span class="nm">' + (r.label || r.id || 'item') + '</span>' +
+        '<span class="ct">' + (r.count || 0) + '</span>';
+      b.addEventListener('click', function () {
+        if (kind === 'stars') postToActive('stars-group-focus', { group: r.id || '' });
+        if (kind === 'spell') postToActive('spell-community-focus', { cid: r.cid });
+      });
+      dockGroups.appendChild(b);
+    });
+  }
+
+  function downloadJson(filename, data) {
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
 
   function setDockExpanded(expanded) {
     viewDock.classList.toggle('expanded', expanded);
@@ -229,63 +448,260 @@
     detailToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     detailToggle.textContent = expanded ? '›' : '‹';
     detailToggle.title = expanded ? 'Hide details panel' : 'Show details panel';
-    try { localStorage.setItem(DETAIL_KEY, expanded ? '1' : '0'); } catch (e) {}
+    detailToggle.style.right = expanded ? 'var(--detail-open)' : '0px';
+    try {
+      localStorage.setItem(DETAIL_KEY, expanded ? '1' : '0');
+    } catch (e) {}
   }
 
   try {
     if (localStorage.getItem(DOCK_KEY) === '0') setDockExpanded(false);
   } catch (e) {}
-  try {
-    if (localStorage.getItem(DETAIL_KEY) === '0') setDetailExpanded(false);
-  } catch (e) {}
 
   dockToggle.addEventListener('click', function () {
     setDockExpanded(!viewDock.classList.contains('expanded'));
   });
+  if (dockLinkMode) {
+    dockLinkMode.addEventListener('change', function () {
+      postToActive('link-mode-set', { enabled: !!dockLinkMode.checked });
+      if (dockLinkStatus) dockLinkStatus.textContent = dockLinkMode.checked ? 'Pick first…' : 'Off';
+    });
+  }
+  var dockCancel = document.getElementById('dock-link-cancel');
+  if (dockCancel) dockCancel.addEventListener('click', function () { postToActive('link-mode-cancel'); });
+  var dockClear = document.getElementById('dock-link-clear');
+  if (dockClear) dockClear.addEventListener('click', function () { postToActive('link-mode-clear'); });
   detailToggle.addEventListener('click', function () {
-    setDetailExpanded(!detailDock.classList.contains('expanded'));
+    const next = !detailDock.classList.contains('expanded');
+    setDetailExpanded(next);
+    try {
+      if (tabStars.getAttribute('aria-selected') === 'true') {
+        localStorage.setItem(STARS_DETAIL_KEY, next ? '1' : '0');
+      }
+    } catch (e) {}
   });
+
+  function postStarHighlightFromInput() {
+    var raw = (starHighlightKws && starHighlightKws.value || '').trim();
+    try {
+      localStorage.setItem(STAR_HIGHLIGHT_KEY, raw);
+    } catch (e) {}
+    var parts = raw.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    try {
+      if (ifStars.contentWindow) {
+        if (parts.length) {
+          ifStars.contentWindow.postMessage({ type: 'stars-community-apply', keywords: parts }, '*');
+        } else {
+          ifStars.contentWindow.postMessage({ type: 'stars-community-clear' }, '*');
+        }
+      }
+    } catch (e2) {}
+  }
+
+  document.getElementById('star-highlight-go').addEventListener('click', postStarHighlightFromInput);
+  document.getElementById('star-highlight-clear').addEventListener('click', function () {
+    if (starHighlightKws) starHighlightKws.value = '';
+    try {
+      localStorage.removeItem(STAR_HIGHLIGHT_KEY);
+    } catch (e) {}
+    try {
+      if (ifStars.contentWindow) ifStars.contentWindow.postMessage({ type: 'stars-community-clear' }, '*');
+    } catch (e2) {}
+    postStarsRefit();
+  });
+  if (starHighlightKws) {
+    starHighlightKws.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') {
+        ev.preventDefault();
+        postStarHighlightFromInput();
+      }
+    });
+  }
 
   function setView(which) {
     const stars = which === 'stars';
+    if (layoutRoot) {
+      layoutRoot.classList.toggle('spell-mode', !stars);
+      layoutRoot.classList.toggle('stars-mode', stars);
+    }
     tabSpell.setAttribute('aria-selected', !stars);
     tabStars.setAttribute('aria-selected', stars);
     ifSpell.classList.toggle('on', !stars);
     ifStars.classList.toggle('on', stars);
     spellPane.style.display = stars ? 'none' : 'block';
     starDetail.classList.toggle('on', stars);
+    try {
+      sessionStorage.setItem(TAB_KEY, stars ? 'stars' : 'spell');
+    } catch (e) {}
+    if (stars) {
+      var dOpen = true;
+      try {
+        dOpen = localStorage.getItem(STARS_DETAIL_KEY) !== '0';
+      } catch (e2) {}
+      setDetailExpanded(dOpen);
+      try {
+        if (ifStars.contentWindow) ifStars.contentWindow.postMessage({ type: 'stars-reset-view' }, '*');
+      } catch (e3) {}
+      postStarsRefit();
+      setTimeout(postStarHighlightFromInput, 120);
+      postToActive('request-groups');
+    } else {
+      setDetailExpanded(false);
+      postToActive('request-groups');
+    }
   }
-  tabSpell.addEventListener('click', () => setView('spell'));
-  tabStars.addEventListener('click', () => setView('stars'));
+  tabSpell.addEventListener('click', function () { setView('spell'); });
+  tabStars.addEventListener('click', function () { setView('stars'); });
+
+  ifStars.addEventListener('load', function () {
+    try {
+      if (sessionStorage.getItem(TAB_KEY) === 'stars') {
+        postStarsRefit();
+      }
+    } catch (e) {}
+    setTimeout(function () {
+      try {
+        var raw = localStorage.getItem(STAR_HIGHLIGHT_KEY) || '';
+        if (starHighlightKws && raw.trim()) {
+          starHighlightKws.value = raw;
+          postStarHighlightFromInput();
+        }
+      } catch (e2) {}
+    }, 220);
+  });
+
+  var reloadIfr = document.getElementById('unified-reload-iframes');
+  if (reloadIfr) {
+    reloadIfr.addEventListener('click', function () {
+      var spellBase = './graph.html';
+      try {
+        spellBase = (ifSpell.getAttribute('src') || spellBase).replace(/[?#].*$/, '');
+      } catch (e) {}
+      ifSpell.src = spellBase + '?embed=1&t=' + Date.now();
+      var starsBase = './github_stars_mirror.html';
+      try {
+        starsBase = (ifStars.getAttribute('src') || starsBase).replace(/[?#].*$/, '');
+      } catch (e2) {}
+      var starsNext = starsBase + '?embed=1&t=' + Date.now();
+      try {
+        var um = String(ifStars.src || '').match(/[?&]user=([^&]+)/);
+        if (um) starsNext += '&user=' + um[1];
+      } catch (e3) {}
+      ifStars.src = starsNext;
+    });
+  }
+  var exportLinksBtn = document.getElementById('unified-export-links');
+  if (exportLinksBtn) {
+    exportLinksBtn.addEventListener('click', function () {
+      var spell = [];
+      var stars = [];
+      try { spell = JSON.parse(localStorage.getItem(SPELL_LINKS_KEY) || '[]'); } catch (e) {}
+      try { stars = JSON.parse(localStorage.getItem(STARS_LINKS_KEY) || '[]'); } catch (e2) {}
+      downloadJson('graph-custom-links.json', {
+        exported_at: new Date().toISOString(),
+        spellbook_links: spell,
+        stars_links: stars
+      });
+    });
+  }
 
   window.addEventListener('keydown', function (ev) {
     if (ev.target && (ev.target.tagName === 'INPUT' || ev.target.tagName === 'TEXTAREA' || ev.target.isContentEditable)) return;
     if (ev.key === '1') { ev.preventDefault(); setView('spell'); }
     if (ev.key === '2') { ev.preventDefault(); setView('stars'); }
+    if (tabStars.getAttribute('aria-selected') !== 'true') return;
     if (ev.key === '[') { ev.preventDefault(); setDetailExpanded(false); }
-    if (ev.key === ']') { ev.preventDefault(); setDetailExpanded(true); }
+    if (ev.key === ']') {
+      ev.preventDefault();
+      setDetailExpanded(true);
+      try {
+        localStorage.setItem(STARS_DETAIL_KEY, '1');
+      } catch (e) {}
+    }
   });
 
   async function fetchReadme(owner, repo) {
+    var key = String(owner || '') + '/' + String(repo || '');
+    if (__readmeCache.has(key)) return __readmeCache.get(key);
     try {
       const r = await fetch(
         'https://api.github.com/repos/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/readme',
         { headers: { Accept: 'application/vnd.github.raw' } }
       );
-      if (r.ok) return await r.text();
+      if (r.ok) {
+        const txt = await r.text();
+        __readmeCache.set(key, txt);
+        return txt;
+      }
     } catch (e) {}
     try {
       const r = await fetch(
         'https://raw.githubusercontent.com/' + owner + '/' + repo + '/HEAD/README.md'
       );
-      if (r.ok) return await r.text();
+      if (r.ok) {
+        const txt = await r.text();
+        __readmeCache.set(key, txt);
+        return txt;
+      }
     } catch (e) {}
+    __readmeCache.set(key, null);
     return null;
   }
 
+  try {
+    var savedK = localStorage.getItem(STAR_HIGHLIGHT_KEY) || '';
+    if (starHighlightKws && savedK) starHighlightKws.value = savedK;
+  } catch (e) {}
+  try {
+    var initial = sessionStorage.getItem(TAB_KEY);
+    if (initial === 'stars') setView('stars');
+    else setView('spell');
+  } catch (e) {
+    setView('spell');
+  }
+  try {
+    if (sessionStorage.getItem(TAB_KEY) === 'stars' && starHighlightKws && starHighlightKws.value.trim()) {
+      setTimeout(postStarHighlightFromInput, 120);
+    }
+  } catch (e2) {}
+
   window.addEventListener('message', async function (ev) {
     const d = ev.data;
-    if (!d || d.type !== 'stars-node') return;
+    if (!d) return;
+    if (d.type === 'unified-spellbook-keywords' && Array.isArray(d.keywords)) {
+      var parts = d.keywords.map(function (k) { return String(k).trim(); }).filter(Boolean);
+      var joined = parts.length ? parts.join(', ') : '';
+      if (starHighlightKws) starHighlightKws.value = joined;
+      try {
+        if (parts.length) localStorage.setItem(STAR_HIGHLIGHT_KEY, joined);
+        else localStorage.removeItem(STAR_HIGHLIGHT_KEY);
+      } catch (e) {}
+      postStarHighlightFromInput();
+      return;
+    }
+    if (d.type === 'spellbook-stats') {
+      var n = Number(d.nodes || 0);
+      var e = Number(d.edges || 0);
+      var ts = d.builtAt ? (' · built ' + new Date(d.builtAt).toLocaleString()) : '';
+      setHealthLine(healthSpell, 'Spellbook: ' + n + ' nodes, ' + e + ' edges' + ts);
+      return;
+    }
+    if (d.type === 'dock-link-status' && typeof d.text === 'string') {
+      if (dockLinkStatus) dockLinkStatus.textContent = d.text;
+      return;
+    }
+    if (d.type === 'dock-groups-data' && Array.isArray(d.items)) {
+      renderDockGroups(d.items, d.kind || 'spell');
+      return;
+    }
+    if (d.type === 'stars-data-ready') {
+      setTimeout(postStarHighlightFromInput, 80);
+      if (typeof d.count === 'number') {
+        setHealthLine(healthStars, 'Stars: ' + d.count + ' repos loaded');
+      }
+      return;
+    }
+    if (d.type !== 'stars-node') return;
     setView('stars');
     const fn = d.fullName || '';
     const url = d.url || '';
@@ -298,11 +714,13 @@
     starHead.innerHTML =
       '<div><b>' + escapeHtml(label) + '</b></div>' +
       (url ? '<p><a href="' + url + '" target="_blank" rel="noopener">Open on GitHub</a></p>' : '');
+    const reqId = ++__readmeReqSeq;
     starReadme.innerHTML = '<p class="loading">Loading README…</p>';
-    const parts = fn.split('/');
-    const owner = parts[0];
-    const repo = parts.slice(1).join('/');
+    const nameParts = fn.split('/');
+    const owner = nameParts[0];
+    const repo = nameParts.slice(1).join('/');
     const md = await fetchReadme(owner, repo);
+    if (reqId !== __readmeReqSeq) return;
     if (md && typeof ReadmeSkin !== 'undefined' && typeof marked !== 'undefined') {
       ReadmeSkin.render(md, starReadme, marked);
     } else if (md) {
@@ -313,12 +731,6 @@
         '<a href="' + (url || 'https://github.com/' + fn) + '" target="_blank" rel="noopener">View on GitHub</a></p>';
     }
   });
-
-  function escapeHtml(s) {
-    const d = document.createElement('div');
-    d.textContent = s;
-    return d.innerHTML;
-  }
 })();
   </script>
 </body>

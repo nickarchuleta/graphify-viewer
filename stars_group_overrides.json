@@ -1,0 +1,22 @@
+{
+  "e2b-dev/awesome-ai-agents": "agents",
+  "addyosmani/agent-skills": "agents",
+  "alirezarezvani/claude-skills": "agents",
+  "mozilla-ai/any-agent": "agents",
+  "superagent-ai/grok-cli": "agents",
+  "langchain-ai/open-swe": "agents",
+  "huggingface/skills": "data",
+  "financial-datasets/mcp-server": "data",
+  "ml-explore/mlx": "mac",
+  "ml-explore/mlx-lm": "mac",
+  "ml-explore/mlx-swift": "mac",
+  "trevin-creator/autoresearch-mlx": "mac",
+  "blaizzy/mlx-audio": "mac",
+  "arahim3/mlx-tune": "mac",
+  "browser-use/browser-use": "browser",
+  "microsoft/playwright": "browser",
+  "puppeteer/puppeteer": "browser",
+  "neo4j/neo4j": "graphs",
+  "langchain-ai/langgraph": "agents",
+  "composiohq/awesome-claude-plugins": "ai_code"
+}
