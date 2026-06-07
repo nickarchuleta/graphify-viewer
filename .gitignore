@@ -17,3 +17,5 @@ data/master_stars_all.json
 
 # Large local export — not required for the viewer (graph.html embeds its own data)
 graph.json
+__pycache__/
+scripts/__pycache__/

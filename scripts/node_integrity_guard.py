@@ -7,14 +7,33 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path.home() / "graphify-out"
+ROOT = Path(__file__).resolve().parent.parent
 GRAPH_JSON = ROOT / "graph.json"
 GRAPH_HTML = ROOT / "graph.html"
 STARS_HTML = ROOT / "github_stars_mirror.html"
 OVERRIDES_JSON = ROOT / "stars_group_overrides.json"
 REPORT = ROOT / "node_integrity_extreme_report.md"
 
-VALID_STAR_GROUPS = {"mac", "ai_code", "agents", "local_ai", "graphs", "browser", "data", "sec", "misc"}
+_FALLBACK_STAR_GROUPS = {"mac", "ai_code", "agents", "local_ai", "graphs", "browser", "data", "sec", "misc"}
+
+
+def _valid_star_groups() -> set[str]:
+    tax = ROOT / "data" / "stars_group_taxonomy.json"
+    if not tax.is_file():
+        return set(_FALLBACK_STAR_GROUPS)
+    try:
+        data = json.loads(tax.read_text(encoding="utf-8"))
+        rows = data.get("groups") if isinstance(data, dict) else None
+        if not isinstance(rows, list):
+            return set(_FALLBACK_STAR_GROUPS)
+        ids = {
+            str(g.get("id") or "").strip()
+            for g in rows
+            if isinstance(g, dict) and str(g.get("id") or "").strip()
+        }
+        return ids if ids else set(_FALLBACK_STAR_GROUPS)
+    except Exception:
+        return set(_FALLBACK_STAR_GROUPS)
 
 
 def parse_const_json(html: str, name: str):
@@ -27,6 +46,7 @@ def parse_const_json(html: str, name: str):
 def main() -> int:
     hard_failures: list[str] = []
     soft_findings: list[str] = []
+    valid_star_groups = _valid_star_groups()
 
     graph = json.loads(GRAPH_JSON.read_text(encoding="utf-8"))
     nodes = graph.get("nodes") or []
@@ -84,7 +104,7 @@ def main() -> int:
     bad_groups = [
         n.get("id")
         for n in fallback_nodes
-        if n.get("id") != "_github_stars_hub" and n.get("_star_group") not in VALID_STAR_GROUPS
+        if n.get("id") != "_github_stars_hub" and n.get("_star_group") not in valid_star_groups
     ]
     if bad_groups:
         hard_failures.append(f"stars nodes with invalid _star_group: {len(bad_groups)}")
@@ -92,7 +112,7 @@ def main() -> int:
     if OVERRIDES_JSON.is_file():
         overrides = json.loads(OVERRIDES_JSON.read_text(encoding="utf-8"))
         bad_override_keys = [k for k in overrides if str(k).strip().lower() != str(k).strip()]
-        bad_override_groups = [k for k, v in overrides.items() if str(v) not in VALID_STAR_GROUPS]
+        bad_override_groups = [k for k, v in overrides.items() if str(v) not in valid_star_groups]
         if bad_override_keys:
             soft_findings.append(f"override keys not normalized lowercase: {len(bad_override_keys)}")
         if bad_override_groups:

@@ -19,10 +19,19 @@ fi
 if [[ -f "$ORACLE/fix_graph_html_spellbook.py" ]]; then
   python3 "$ORACLE/fix_graph_html_spellbook.py" || true
 fi
+if [[ -f "$OUT/scripts/sync_graph_html_from_json.py" ]]; then
+  python3 "$OUT/scripts/sync_graph_html_from_json.py"
+fi
 if [[ -f "$OUT/scripts/node_integrity_guard.py" ]]; then
   python3 "$OUT/scripts/node_integrity_guard.py"
 fi
 if [[ -f "$OUT/scripts/stars_node_integrity.py" ]]; then
   python3 "$OUT/scripts/stars_node_integrity.py"
+fi
+if [[ -f "$OUT/scripts/check_spellbook_url_correctness.py" ]]; then
+  python3 "$OUT/scripts/check_spellbook_url_correctness.py"
+fi
+if [[ -f "$OUT/scripts/check_ui_chrome_snapshot.py" ]]; then
+  python3 "$OUT/scripts/check_ui_chrome_snapshot.py"
 fi
 echo "Done. Open: file://$OUT/graph_unified.html (or serve $OUT over HTTP)."

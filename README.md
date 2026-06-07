@@ -55,6 +55,13 @@ python3 scripts/render_github_stars_mirror.py
 
 The script also runs from `~/spellbook_oracle/` if you keep stars JSON there (see script docstring).
 
+## Consistency + Repeatability guards
+
+- Canonical stars grouping taxonomy: `data/stars_group_taxonomy.json`
+- URL correctness guard (Spellbook node link semantics): `python3 scripts/check_spellbook_url_correctness.py`
+- UI chrome regression contract (dock/arrow geometry): `python3 scripts/check_ui_chrome_snapshot.py`
+- Full deep-grok coverage planner/runner: `python3 scripts/run_full_deep_grok_coverage.py`
+
 ## Publishing updates (you)
 
 After editing files in your clone:

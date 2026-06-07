@@ -1,0 +1,27 @@
+{
+  "side_open": "min(280px, 24vw)",
+  "detail_open": "var(--side-open)",
+  "dock_toggle": {
+    "width": "20px",
+    "height": "44px",
+    "border": "1px solid var(--border)",
+    "font_size": "16px"
+  },
+  "left_toggle": {
+    "border_left": "none",
+    "border_right": "",
+    "border_radius": "0 6px 6px 0",
+    "right": "-20px"
+  },
+  "right_toggle": {
+    "border_left": "",
+    "border_right": "none",
+    "border_radius": "6px 0 0 6px",
+    "right": "none"
+  },
+  "panels": {
+    "left_width": "var(--side-open)",
+    "right_width": "var(--detail-open)",
+    "right_border_base": "none"
+  }
+}

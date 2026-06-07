@@ -1,8 +1,8 @@
 # Stars Node Integrity Report
 
-- nodes: **597**
-- non-hub nodes: **596**
-- edges: **596**
+- nodes: **676**
+- non-hub nodes: **675**
+- edges: **675**
 
 ## Findings
 - none

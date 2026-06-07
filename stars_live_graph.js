@@ -6,7 +6,7 @@
   'use strict';
 
   /** Ordered rules — first match wins. Last entry is fallback. */
-  var STARS_GROUPS = [
+  var DEFAULT_STARS_GROUPS = [
     { id: 'mac', label: 'This Mac & Apple', color: '#4E79A7', kws: ['swift', 'mlx', 'macos', 'darwin', 'xcode', 'ios', 'appkit', 'catalyst', 'apple-silicon', 'metal', 'swiftui', 'cocoa', 'foundation', 'objc', 'watchos', 'tvos'] },
     { id: 'ai_code', label: 'AI coding stack', color: '#F28E2B', kws: ['claude', 'mcp', 'cursor', 'copilot', 'codex', 'openclaw', 'aider', 'windsurf', 'opencode', 'gemini-cli', 'cline', 'continue.dev'] },
     { id: 'agents', label: 'Agents & orchestration', color: '#EDC948', kws: ['agent', 'multi-agent', 'autogen', 'crewai', 'langgraph', 'orchestr', 'swarm', 'droid'] },
@@ -17,6 +17,7 @@
     { id: 'sec', label: 'Security & OSINT', color: '#9C755F', kws: ['security', 'osint', 'pentest', 'cve', 'malware', 'forensic'] },
     { id: 'misc', label: 'Everything else', color: '#BAB0AC', kws: [] },
   ];
+  var STARS_GROUPS = DEFAULT_STARS_GROUPS.slice();
   /** Explicit per-repo fixes for ambiguous keyword overlaps. */
   var DEFAULT_STARS_GROUP_OVERRIDES = {
     'e2b-dev/awesome-ai-agents': 'agents',
@@ -42,8 +43,7 @@
   };
   var STARS_GROUP_OVERRIDES = Object.assign({}, DEFAULT_STARS_GROUP_OVERRIDES);
   var __starsOverrideLoaded = false;
-  var STARS_ENRICHMENT = {};
-  var __starsEnrichmentLoaded = false;
+  var __starsTaxonomyLoaded = false;
   function groupById(id) {
     for (var i = 0; i < STARS_GROUPS.length; i++) {
       if (STARS_GROUPS[i].id === id) return STARS_GROUPS[i];
@@ -67,21 +67,26 @@
       });
     } catch (e) {}
   }
-
-  async function loadEnrichmentFile() {
-    if (__starsEnrichmentLoaded) return;
-    __starsEnrichmentLoaded = true;
+  async function loadTaxonomyFile() {
+    if (__starsTaxonomyLoaded) return;
+    __starsTaxonomyLoaded = true;
     try {
-      var r = await fetch('./manifests/deep_grok_enrichment_all_repos.json', { cache: 'no-store' });
+      var r = await fetch('./data/stars_group_taxonomy.json', { cache: 'no-store' });
       if (!r.ok) return;
       var j = await r.json();
-      var repos = j && Array.isArray(j.repos) ? j.repos : [];
-      for (var i = 0; i < repos.length; i++) {
-        var row = repos[i] || {};
-        var key = String(row.repo || '').toLowerCase().trim();
-        if (!key) continue;
-        STARS_ENRICHMENT[key] = row;
+      var rows = j && Array.isArray(j.groups) ? j.groups : null;
+      if (!rows || !rows.length) return;
+      var cooked = [];
+      for (var i = 0; i < rows.length; i++) {
+        var g = rows[i] || {};
+        var id = String(g.id || '').trim();
+        var label = String(g.label || '').trim();
+        var color = String(g.color || '').trim();
+        var kws = Array.isArray(g.kws) ? g.kws.map(function (x) { return String(x || '').toLowerCase(); }).filter(Boolean) : [];
+        if (!id || !label || !color) continue;
+        cooked.push({ id: id, label: label, color: color, kws: kws });
       }
+      if (cooked.length) STARS_GROUPS = cooked;
     } catch (e) {}
   }
 
@@ -100,9 +105,11 @@
       for (var j = 0; j < g.kws.length; j++) {
         if (blob.indexOf(g.kws[j]) !== -1) score += 1;
       }
-      if (g.id === 'agents' && (fn.indexOf('agent') !== -1 || topics.indexOf('agent') !== -1)) score += 2;
+      if ((g.id === 'agents' || g.id === 'ai_agent_fw' || g.id === 'multi_agent') && (fn.indexOf('agent') !== -1 || topics.indexOf('agent') !== -1)) score += 2;
       if (g.id === 'mac' && (fn.indexOf('mlx') !== -1 || fn.indexOf('swift') !== -1)) score += 2;
-      if (g.id === 'browser' && (fn.indexOf('playwright') !== -1 || fn.indexOf('browser') !== -1)) score += 2;
+      if ((g.id === 'browser' || g.id === 'browser_auto') && (fn.indexOf('playwright') !== -1 || fn.indexOf('browser') !== -1)) score += 2;
+      if (g.id === 'local_ai_inf' && (fn.indexOf('ollama') !== -1 || fn.indexOf('llama.cpp') !== -1 || fn.indexOf('gguf') !== -1)) score += 2;
+      if (g.id === 'mcp_ext' && (topics.indexOf('mcp') !== -1 || desc.indexOf('mcp') !== -1)) score += 2;
       if (score > bestScore) {
         bestScore = score;
         best = g;
@@ -161,8 +168,8 @@
   }
 
   async function buildNodesEdges(apiRepos) {
+    await loadTaxonomyFile();
     await loadOverrideFile();
-    await loadEnrichmentFile();
     var hubId = '_github_stars_hub';
     var hubTitle =
       'Hub — ' +
@@ -188,21 +195,13 @@
       var url = r.html_url || 'https://github.com/' + fn;
       var parts = fn.split('/');
       var label = (parts[parts.length - 1] || fn).slice(0, 40);
-      var desc = String(r.description || '').slice(0, 180);
+      var desc = String(r.description || '').slice(0, 80);
       var stars = r.stargazers_count || 0;
       var lang = r.language || '—';
       var grp = inferStarGroup(r);
-      var enrich = STARS_ENRICHMENT[fn.toLowerCase()] || null;
-      var title = fn + '\n' + stars + '★ · ' + lang + '\n' + desc + '\n— ' + grp.label;
-      if (enrich) {
-        var src = enrich.enrichment_source || 'fallback_only';
-        var ic = Number(enrich.insight_count || 0);
-        var kws = Array.isArray(enrich.keywords) ? enrich.keywords.slice(0, 6).join(', ') : '';
-        title += '\n[deep] ' + src + ' · insights:' + ic;
-        if (kws) title += '\n[kws] ' + kws;
-      }
+      var title = fn + '\n' + (stars ? stars.toLocaleString() + '★' : '—') + ' · ' + lang + (desc ? '\n' + desc : '') + '\n' + grp.label;
       var col = grp.color;
-      var size = 10 + Math.min(18, stars ? Math.pow(stars, 0.33) : 8);
+      var size = stars ? Math.max(8, Math.min(40, 8 + Math.log10(stars + 1) * 5.5)) : 8;
       nodes.push({
         id: gid,
         label: label,
@@ -213,9 +212,6 @@
         title: escTitle(title),
         url: url,
         _star_group: grp.id,
-        _enrich_source: enrich ? (enrich.enrichment_source || '') : '',
-        _enrich_insight_count: enrich ? Number(enrich.insight_count || 0) : 0,
-        _enrich_keywords: enrich && Array.isArray(enrich.keywords) ? enrich.keywords.slice(0, 10) : [],
       });
       edges.push({ from: hubId, to: gid });
     }
@@ -228,6 +224,6 @@
     fetchAllStarred: fetchAllStarred,
     buildNodesEdges: buildNodesEdges,
     loadOverrideFile: loadOverrideFile,
-    loadEnrichmentFile: loadEnrichmentFile,
+    loadTaxonomyFile: loadTaxonomyFile,
   };
 })(typeof window !== 'undefined' ? window : this);

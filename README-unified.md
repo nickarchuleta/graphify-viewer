@@ -12,6 +12,10 @@ Use this file to **resume work** in a new chat or with Claude Code: it maps what
 | `github_stars_mirror.html` | Generated stars graph; `?embed=1` hides chrome and `postMessage`s selection to parent |
 | `graph_hub.html` | Redirect to `graph_unified.html` |
 | `scripts/render_github_stars_mirror.py` | Builds `github_stars_mirror.html` from stars JSON |
+| `data/stars_group_taxonomy.json` | Canonical stars grouping taxonomy (ids, labels, colors, kws) |
+| `scripts/check_spellbook_url_correctness.py` | Guard: concept/topic nodes must not claim inferred repo links |
+| `scripts/check_ui_chrome_snapshot.py` | Snapshot-contract guard for dock/arrow geometry |
+| `scripts/run_full_deep_grok_coverage.py` | Full-coverage planner/runner for deep-grok backlog |
 
 ## Architecture
 
@@ -47,6 +51,27 @@ Flex gotcha: children default to `min-height: auto` and grow past the viewport. 
 ### CORS
 
 Serve over **http**, not `file://`, for README fetch.
+
+### Node provenance in Spellbook UI
+
+Node info now shows explicit provenance rows:
+- **Node kind** (`repo`, `concept`, `topic`, etc.)
+- **Link provenance** (`explicit source_url`, inferred from homework filename, installed-graphify fallback, or none)
+
+This makes link behavior auditable at click-time and avoids semantic confusion.
+
+### Reliability checks
+
+Run guards locally:
+
+```bash
+python3 scripts/node_integrity_guard.py
+python3 scripts/stars_node_integrity.py
+python3 scripts/check_spellbook_url_correctness.py
+python3 scripts/check_ui_chrome_snapshot.py
+```
+
+Refresh pipeline (`refresh_graphs_from_github.sh`) now calls these guards automatically.
 
 ### Regenerator paths
 

@@ -1,0 +1,29 @@
+name: Graph Guards
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run spellbook/stars integrity guards
+        run: |
+          python3 scripts/node_integrity_guard.py
+          python3 scripts/stars_node_integrity.py
+
+      - name: Run spellbook URL correctness guard
+        run: |
+          python3 scripts/check_spellbook_url_correctness.py
+
+      - name: Run UI chrome snapshot contract
+        run: |
+          python3 scripts/check_ui_chrome_snapshot.py

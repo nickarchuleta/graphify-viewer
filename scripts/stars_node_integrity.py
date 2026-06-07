@@ -5,10 +5,30 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path.home() / "graphify-out"
+ROOT = Path(__file__).resolve().parent.parent
 STARS_HTML = ROOT / "github_stars_mirror.html"
 REPORT = ROOT / "stars_node_integrity_report.md"
-VALID_GROUPS = {"hub", "mac", "ai_code", "agents", "local_ai", "graphs", "browser", "data", "sec", "misc"}
+_FALLBACK_GROUPS = {"hub", "mac", "ai_code", "agents", "local_ai", "graphs", "browser", "data", "sec", "misc"}
+
+
+def _valid_groups() -> set[str]:
+    tax = ROOT / "data" / "stars_group_taxonomy.json"
+    if not tax.is_file():
+        return set(_FALLBACK_GROUPS)
+    try:
+        data = json.loads(tax.read_text(encoding="utf-8"))
+        rows = data.get("groups") if isinstance(data, dict) else None
+        if not isinstance(rows, list):
+            return set(_FALLBACK_GROUPS)
+        ids = {
+            str(g.get("id") or "").strip()
+            for g in rows
+            if isinstance(g, dict) and str(g.get("id") or "").strip()
+        }
+        base = ids if ids else set(_FALLBACK_GROUPS)
+        return base | {"hub"}
+    except Exception:
+        return set(_FALLBACK_GROUPS)
 
 
 def parse_const(name: str, html: str):
@@ -19,6 +39,7 @@ def parse_const(name: str, html: str):
 
 
 def main() -> int:
+    valid_groups = _valid_groups()
     html = STARS_HTML.read_text(encoding="utf-8")
     nodes = parse_const("FALLBACK_NODES", html) or []
     edges = parse_const("FALLBACK_EDGES", html) or []
@@ -47,7 +68,7 @@ def main() -> int:
     if missing_full:
         issues.append(f"nodes missing full_name owner/repo: {len(missing_full)}")
 
-    bad_group = [n.get("id") for n in non_hub if n.get("_star_group") not in VALID_GROUPS]
+    bad_group = [n.get("id") for n in non_hub if n.get("_star_group") not in valid_groups]
     if bad_group:
         issues.append(f"nodes with invalid _star_group: {len(bad_group)}")
 
